@@ -1,0 +1,95 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ProyectoBase.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Main.cpp
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\vectorrr.h(49): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(50): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(52): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(64): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(65): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(67): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(214): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(215): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(314): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(315): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(316): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(326): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(327): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(328): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\imagenes.h(61): warning C4101: 'e' : unreferenced local variable
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\imagenes.h(80): warning C4101: 'e' : unreferenced local variable
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\terrain.h(87): warning C4101: 'indice' : unreferenced local variable
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(65): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(68): warning C4244: '*=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(69): warning C4244: '*=' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\fog.h(16): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(316): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(318): warning C4305: '=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(331): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\water.h(167): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\water.h(171): warning C4305: 'initializing' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(112): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(112): warning C4154: deletion of an array expression; conversion to pointer supplied
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(190): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(118): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(118): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(120): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(131): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(144): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(224): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(242): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(251): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(259): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(271): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(301): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(372): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(393): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(436): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(446): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(452): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(452): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(468): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(474): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(476): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(484): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(488): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(507): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(513): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(515): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(520): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(564): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(570): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(572): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(588): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(595): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(628): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(634): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(648): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(651): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(657): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(659): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(689): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(705): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(715): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(722): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(723): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(730): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(736): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(737): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(743): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(744): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(764): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(774): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(792): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(801): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(812): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(813): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(821): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(834): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(846): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(863): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\main.cpp(183): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(76): warning C4715: 'Particles::Particle::Update' : not all control paths return a value
+  PF POO.vcxproj -> C:\Carpeta de documentos\FCFM Portafolio\C++_OpenGL_MarioRPG\MARIORPG\Debug\PF POO.exe
