@@ -1,13 +1,14 @@
 <!-- HEADER -->
+<br />
 <p align="center">
  <a href="https://github.com/Deathmajorasmask/MarioRPG-OpenGL">
-    <img src="images/RPGMario.png" alt="Logo" width="80" height="80">
+    <img src="images/RPGMario.png" alt="Logo" width="80" height="130">
  </a>
 
   <h3 align="center">MarioRPG-OpenGL</h3>
 
   <p align="center">
-    An awesome videogame created in OpenGL!
+    An awesome videogame / graphic motor created in OpenGL !
     <br />
   </p>
 </p>
@@ -83,7 +84,9 @@ You will have to download.
 
 
 ## Screenshots
-[![Product Name Screen Shot][screenshot02]]
+![Product Name Screen Shot][screenshot04]
+![Product Name Screen Shot][screenshot05]
+![Product Name Screen Shot][screenshot06]
 
 
 
@@ -127,4 +130,6 @@ Project Link: [https://github.com/Deathmajorasmask/MarioRPG-OpenGL](https://gith
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [screenshot]: images/Screen01_MarioRPG.JPG
-[screenshot02]: images/Screen02_MarioRPG.JPG
+[screenshot04]: images/Screen04_MarioRPG.JPG
+[screenshot05]: images/Screen05_MarioRPG.JPG
+[screenshot06]: images/Screen06_MarioRPG.JPG
