@@ -42,11 +42,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][screenshot]](https://example.com)
+[![Product Name Screen Shot][screenshot]](https://github.com/Deathmajorasmask/MarioRPG-OpenGL)
 
 It's a video game created in OpenGL inspired by Mario RPG that has a combat system, collisions, lights, obj exporter, among many other things. Developed in c++ and OpenGL.
 
-The graphics engine serves as the basis for the creation of other video games or the development of this project itself. I would like to continue developing more levels and explore the possibilities of enviroment.
+The graphics engine can be used as the core for the creation of other video games or the development of this project itself. I would like to continue developing more levels and explore the possibilities of enviroment.
 
 The possibilities with this base are endless, so I hope you can take the source code of this project as an example.
 
@@ -67,9 +67,9 @@ Follow the instructions below to get it working and proceed to modify or test th
 ### Prerequisites
 
 You will have to download.
-* Visual Studio (any version). This project is by default in version 2015.
+* Visual Studio compatible with all version. Default project Visual studio 2015
 
-* Install sdk compatible
+* Install / update sdk & platform toolset compatible (140v)
 
 ### Installation
 
@@ -77,9 +77,9 @@ You will have to download.
    ```sh
    git clone https://github.com/Deathmajorasmask/MarioRPG-OpenGL.git
    ```
-3. Open PF POO.sln with Visual Studio.
+2. Open PF POO.sln in Visual Studio.
 
-4. Press 'Local Windows Debugger'.
+3. Press 'Local Windows Debugger'.
 
 
 
