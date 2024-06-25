@@ -6,7 +6,7 @@
 class SkyDome:public Primitivos, public Imagenes
 {
 public:
-	Maya cuadro;
+	Mesh cuadro;
 	int st, sl;
 	unsigned int esferaTextura;	
 
@@ -16,9 +16,9 @@ public:
 		cuadro=Esfera(stacks, slices, radio, 0.5, 1);
 		st=stacks;
 		sl=slices;
-		//cargamos la textura de la figura
+		//We load the texture of the figure
 		Carga(nombre);		
-		//en caso del puntero de la imagen sea nulo se brica esta opcion
+		//If the image pointer is null, this option is created
 		if (Dir_Imagen())
 		{
 			glGenTextures(1, &esferaTextura);
@@ -29,15 +29,14 @@ public:
 				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST_MIPMAP_LINEAR);
 			gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, Ancho(), Alto(), GL_RGBA, GL_UNSIGNED_BYTE, Dir_Imagen());
 			//glDeleteTextures(1, &esferaTextura);
-			//disponemos la textura del gdi.
+			//The gdi texture.
 			Descarga();
 		}
 	}
 
 	~SkyDome()
 	{
-		//nos aseguramos de disponer de los recursos previamente reservados
-		delete cuadro.maya;
+		delete cuadro.mesh;
 		delete cuadro.indices;
 		glDeleteTextures(1, &esferaTextura);
 	}
@@ -51,19 +50,19 @@ public:
 		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
 		glBindTexture(GL_TEXTURE_2D, esferaTextura);
-		//habilitamos la posibilidad de guardar arreglos de procesamiento inmediato
+		//We enable the ability to save immediate processing arrangements
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glEnableClientState(GL_NORMAL_ARRAY);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 		
-		//asignamos punteros de vertices, normales y texturas al buffer de conexiones que sigue
-		glVertexPointer(3, GL_FLOAT, sizeof(Vertices), &cuadro.maya[0].Posx);		
-		glNormalPointer(GL_FLOAT, sizeof(Vertices), &cuadro.maya[0].Normx);		
-		glTexCoordPointer(2, GL_FLOAT, sizeof(Vertices), &cuadro.maya[0].u);
+		//Assign vertex, normal and texture pointers to the connection buffer
+		glVertexPointer(3, GL_FLOAT, sizeof(Vertex), &cuadro.mesh[0].Posx);		
+		glNormalPointer(GL_FLOAT, sizeof(Vertex), &cuadro.mesh[0].Normx);		
+		glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), &cuadro.mesh[0].u);
 		
-		//conectamos todos los vertices previamente cargados a traves de sus punteros para procesarse
+		//We connect all previously loaded vertices through their pointers to be processed
 		glDrawElements(GL_TRIANGLES, (sl-1)*(st-1)*6, GL_UNSIGNED_INT, cuadro.indices);
-		//desocupamos la asignacion para que podamos utilizarlo con un nuevo elemento
+		//We clear the allocation so we can use it with a new element
 		glDisableClientState(GL_VERTEX_ARRAY);
 		glDisableClientState(GL_NORMAL_ARRAY);
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);		

@@ -212,7 +212,6 @@ public:
 				mx--;
 			}
 
-
 		} 
 		else{
 
@@ -384,7 +383,6 @@ public:
 			}
 		}
 		
-
 	}
 
 	bool victoriaAbsurda() {

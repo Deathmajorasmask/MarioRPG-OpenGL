@@ -27,7 +27,6 @@ public:
 		// Carga el shader
 		std::ifstream inFile(nombre, std::ifstream::in);
 		if (!inFile) {
-			//adios, no se pudo
 			exit(1);
 		}
 
@@ -40,30 +39,25 @@ public:
 			shaderCode[i++] = c;
 		}
 		inFile.close();
-		shaderCode[--i] = '\0';     // el ultimo debe de ser nulo a fuerza
-									////////////////////////////////////////////
+		shaderCode[--i] = '\0';     // NULL
 
-									// Crea el objeto
+		// Object 
 		vertShader = glCreateShader(GL_VERTEX_SHADER);
 		if (0 == vertShader) {
-			//si da cero no se pudo, adios
 			exit(1);
 		}
 
 		// Load the source code into the shader object
 		const GLchar* codeArray[] = { shaderCode };
 		glShaderSource(vertShader, 1, codeArray, NULL);
-		free(shaderCode); // libera la memoria usada.
+		free(shaderCode);
 
-						  // Compila al shader
 		glCompileShader(vertShader);
 
-		// Checa si se pudo
 		GLint result;
 		glGetShaderiv(vertShader, GL_COMPILE_STATUS, &result);
 		if (GL_FALSE == result) {
-			//no se pudo
-			//checa por que
+			// print error
 			GLint logLen;
 			glGetShaderiv(vertShader, GL_INFO_LOG_LENGTH, &logLen);
 
@@ -72,7 +66,7 @@ public:
 
 				GLsizei written;
 				glGetShaderInfoLog(vertShader, logLen, &written, log);
-				//es conveniente imprimir la razon
+				// log error
 				free(log);
 			}
 		}
@@ -81,10 +75,9 @@ public:
 		/////////// Fragment shader //////////////////////////
 		//////////////////////////////////////////////////////
 
-		// carga al shader
+		// Load Shader
 		std::ifstream fragFile(nombref, std::ifstream::in);
 		if (!fragFile) {
-			//no se pudo
 			exit(1);
 		}
 
@@ -97,25 +90,22 @@ public:
 		inFile.close();
 		shaderCode[--i] = '\0';
 		////////////////////////////////////////////
-		// Create al objeto
+		// Create Object
 		fragShader = glCreateShader(GL_FRAGMENT_SHADER);
 		if (0 == fragShader) {
-			//no se pudo
 			exit(1);
 		}
 
-		// carga al codigo		
+		// Load Code	
 		codeArray[0] = shaderCode;
 		glShaderSource(fragShader, 1, codeArray, NULL);
-		free(shaderCode); // se libera la memoria utilizada
+		free(shaderCode);
 
-						  // Compila al shader
 		glCompileShader(fragShader);
 
-		// Checa si se pudo	
 		glGetShaderiv(fragShader, GL_COMPILE_STATUS, &result);
 		if (GL_FALSE == result) {
-			//fprintf( stderr, "Fragment shader compilation failed!\n" );
+			fprintf( stderr, "Fragment shader compilation failed!\n" );
 
 			GLint logLen;
 			glGetShaderiv(fragShader, GL_INFO_LOG_LENGTH, &logLen);
@@ -135,7 +125,7 @@ public:
 
 	}
 
-	//pone matrices de 4x4 en el sahder
+	// 4x4 matrix in shader
 	void PonValorM4x4(char *nombre, GLfloat valor[])
 	{
 		GLuint lugar = glGetUniformLocation(programHandle, nombre);
@@ -145,7 +135,7 @@ public:
 		}
 	}
 
-	//pone un arreglo de 3 elementos flotantes en el shader
+	// Puts an array of 3 floating elements in the shader
 	void PonValorV3(char *nombre, GLfloat valor[])
 	{
 		GLuint lugar = glGetUniformLocation(programHandle, nombre);
@@ -156,7 +146,7 @@ public:
 
 	}
 
-	//Milton
+	// Set Texture
 	void PonTextura(char *Textura, GLint posicion) {
 		GLuint lugar = glGetUniformLocation(programHandle, Textura);
 		if (lugar >= 0) {
@@ -176,10 +166,8 @@ public:
 
 	void ligador(GLint vertShader, GLint fragShader)
 	{
-		// Crea al programa
 		programHandle = glCreateProgram();
 		if (0 == programHandle) {
-			//no se pudo
 			exit(1);
 		}
 

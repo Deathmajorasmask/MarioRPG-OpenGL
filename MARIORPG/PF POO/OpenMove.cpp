@@ -4,7 +4,7 @@
 
 
 OpenMove::OpenMove() {
-	//nohagonada
+
 }
 
 OpenMove::~OpenMove()
@@ -82,36 +82,36 @@ void OpenMove::rotate(float deg, int x, int y, int z) {
 	glLoadMatrixf(world_mat);
 }
 
-void OpenMove::multMat(float* tranformacion, float* mundo) {
+void OpenMove::multMat(float* transformate, float* world) {
 	float c[16];
 	for (int i = 0; i < 16; i += 4) {
 		c[i] = (
-			tranformacion[i] * mundo[0] +
-			tranformacion[i + 1] * mundo[4] +
-			tranformacion[i + 2] * mundo[8] +
-			tranformacion[i + 3] * mundo[12]);
+			transformate[i] * world[0] +
+			transformate[i + 1] * world[4] +
+			transformate[i + 2] * world[8] +
+			transformate[i + 3] * world[12]);
 
 		c[i + 1] = (
-			tranformacion[i] * mundo[1] +
-			tranformacion[i + 1] * mundo[5] +
-			tranformacion[i + 2] * mundo[9] +
-			tranformacion[i + 3] * mundo[13]);
+			transformate[i] * world[1] +
+			transformate[i + 1] * world[5] +
+			transformate[i + 2] * world[9] +
+			transformate[i + 3] * world[13]);
 
 		c[i + 2] = (
-			tranformacion[i] * mundo[2] +
-			tranformacion[i + 1] * mundo[6] +
-			tranformacion[i + 2] * mundo[10] +
-			tranformacion[i + 3] * mundo[14]);
+			transformate[i] * world[2] +
+			transformate[i + 1] * world[6] +
+			transformate[i + 2] * world[10] +
+			transformate[i + 3] * world[14]);
 
 		c[i + 3] = (
-			tranformacion[i] * mundo[3] +
-			tranformacion[i + 1] * mundo[7] +
-			tranformacion[i + 2] * mundo[11] +
-			tranformacion[i + 3] * mundo[15]);
+			transformate[i] * world[3] +
+			transformate[i + 1] * world[7] +
+			transformate[i + 2] * world[11] +
+			transformate[i + 3] * world[15]);
 	}
 
 	for (int i = 0; i < 16; i++) {
-		mundo[i] = c[i];
+		world[i] = c[i];
 	}
 
 }

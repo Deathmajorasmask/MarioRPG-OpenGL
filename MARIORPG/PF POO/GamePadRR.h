@@ -1,45 +1,45 @@
-#ifndef _XBOX_CONTROLLER_H_
+﻿#ifndef _XBOX_CONTROLLER_H_
 #define _XBOX_CONTROLLER_H_
 
-//no agrega en la compilada drivers de comunicaciones y otras cosas
-#define WIN32_LEAN_AND_MEAN
+// Reduces the size of the Win32 header files by excluding some of the less frequently used APIs
+// #define WIN32_LEAN_AND_MEAN
 
-// Incluimos estas librerias para avanzar
 #include <windows.h>
-#include <XInput.h> //libreria del Xbox solo gamepads o joysticks compatibles
+// Xbox library only compatible gamepads or joysticks
+#include <XInput.h>
 #pragma comment(lib, "XInput.lib")
 // XBOX Controller Class Definition
 class GamePadRR
 {
 
 private:
-    XINPUT_STATE estadoControlador;
-    int numeroControlador;
-
+	XINPUT_STATE estadoControlador;
+	int numeroControlador;
+	
 public:
-    GamePadRR(int jugadorNumero)
+	GamePadRR(int jugadorNumero)
 	{
-		// establece el numero de jugador
+		// Player number
 		numeroControlador = jugadorNumero - 1;
 	}
 
-    XINPUT_STATE GetState()
+	XINPUT_STATE GetState()
 	{
-		// limpia la estructura del estado del gamepad
+		// Clear gamepad state structure
 		ZeroMemory(&estadoControlador, sizeof(XINPUT_STATE));
 
-		// obtiene el estado del gamepad
+		// Get gamepad status
 		XInputGetState(numeroControlador, &estadoControlador);
 
 		return estadoControlador;
 	}
 
-    bool IsConnected()
+	bool IsConnected()
 	{
-		// limpia la estructura de estado
+		// Clear the state structure
 		ZeroMemory(&estadoControlador, sizeof(XINPUT_STATE));
 
-		// obtiene el estado
+		// Get gamepad status
 		DWORD Resultado = XInputGetState(numeroControlador, &estadoControlador);
 
 		if(Resultado == ERROR_SUCCESS)
@@ -52,22 +52,25 @@ public:
 		}
 	}
 
-    void Vibrate(int leftVal = 0, int rightVal = 0)
+	void Vibrate(int leftVal = 0, int rightVal = 0)
 	{
-    // Createl estado de vibracion
-    XINPUT_VIBRATION Vibracion;
+	// Create vibration state
+	XINPUT_VIBRATION Vibracion;
 
-    // limpia los valores previos de la estructura
-    ZeroMemory(&Vibracion, sizeof(XINPUT_VIBRATION));
+	// Clears the previous values ​​of the structure
+	ZeroMemory(&Vibracion, sizeof(XINPUT_VIBRATION));
 
-    // establece los valores de vibracion
-    Vibracion.wLeftMotorSpeed = leftVal;
-    Vibracion.wRightMotorSpeed = rightVal;
+	// Set vibration values
+	Vibracion.wLeftMotorSpeed = leftVal;
+	Vibracion.wRightMotorSpeed = rightVal;
 
-    // Vibra el controlador
-    XInputSetState(numeroControlador, &Vibracion);
+	// Vibrates the controller
+	XInputSetState(numeroControlador, &Vibracion);
 	}
-	//estas son las equivalencias a los botonazos mas comunes
+
+};
+
+	// LIST BUTTONS COMMONS
 	/*XINPUT_GAMEPAD_DPAD_UP          0x00000001
 	XINPUT_GAMEPAD_DPAD_DOWN        0x00000002
 	XINPUT_GAMEPAD_DPAD_LEFT        0x00000004
@@ -82,6 +85,5 @@ public:
 	XINPUT_GAMEPAD_B                0x2000
 	XINPUT_GAMEPAD_X                0x4000
 	XINPUT_GAMEPAD_Y                0x8000*/
-};
 
 #endif

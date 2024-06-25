@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
-Debug|Win32|C:\Carpeta de documentos\FCFM Portafolio\C++_OpenGL_MarioRPG\MARIORPG\|
+PlatformToolSet=v143:VCToolArchitecture=Native32Bit:VCToolsVersion=14.39.33519:TargetPlatformVersion=10.0.22621.0:
+Debug|Win32|C:\FZGC\Project_CPP\MARIORPG\|

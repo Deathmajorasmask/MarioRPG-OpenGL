@@ -14,7 +14,7 @@
 #include "Water.h"
 #include "Animations.h"
 #include <time.h>
-#include <stdlib.h>     //srand, rand
+#include <stdlib.h>
 #include "Particle.h"
 #include "OpenMove.h"
 
@@ -179,7 +179,6 @@ public:
 			nuevoMapa = true;
 		}
 		if (renderMultimapa){
-			//LO MAS IMPORTANTE
 			glPushMatrix();
 			foges->density = dens;
 			foges->drawing();

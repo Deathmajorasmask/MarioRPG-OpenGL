@@ -1,8 +1,5 @@
 #ifndef imageness
 #define imageness
-//Clase desarrollada por Rafael Rosas para los amazing LMADs
-//POO C++
-//carga imagenes y las asigna al OpenGL como texturas.
 
 #include <gdiplus.h>
 #include <windows.h>
@@ -11,6 +8,8 @@
 #include <exception>
 #pragma comment(lib,"gdiplus.lib")
 using namespace Gdiplus;
+
+// Loads images and assigns them to OpenGL as textures.
 
 class Imagenes {
 public:
@@ -36,7 +35,6 @@ public:
 		ULONG_PTR     gdiplusToken;
 		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
-
 		Bitmap* bitmap = new Bitmap(nombre);
 		BitmapData* bitmapData = new BitmapData;
 
@@ -51,27 +49,23 @@ public:
 
 		int tamaño;
 		tamaño = ancho*alto * 4;
-		//hagamos un try de la reserva de memoria
 		try
 		{
-			dir_imagen = new unsigned char[tamaño]; //[tamaño*1000000]; ponganle esto como prueba
+			dir_imagen = new unsigned char[tamaño]; //[tamaño*1000000];
 			primero = dir_imagen;
 		}
-		//en caso de falla entonces
+		//Error catch
 		catch (std::exception& e)
 		{
-			//nosotros sabemos donde se genero el error entonces le diremos al usuario
-			int msgboxID = MessageBox(hWnd, "Insuficiente memoria para contener la textura",
-				(LPCSTR)"Clase Imagenes", MB_ICONWARNING | MB_CANCELTRYCONTINUE | MB_DEFBUTTON2);
-			//interpretemos el message box y hagamos algo adecuado a la opcion seleccionada
+			int msgboxID = MessageBox(hWnd, "Insufficient memory to hold the texture",
+				(LPCSTR)"Imagenes Class", MB_ICONWARNING | MB_CANCELTRYCONTINUE | MB_DEFBUTTON2);
+			//Read Message Box result
 			switch (msgboxID)
 			{
-				//de plano pa'juera o para afuera?, no me acuerdo!
 			case IDCANCEL:
 				exit(0);
 				break;
-				//un nuevo intento con una textura mas pequeño en todo caso
-				//si no alcanza pa los tacos tonces pa la tortilla, que me pasa? ya comí?
+				// Try small texture
 			case IDTRYAGAIN:
 				try {
 					dir_imagen = new unsigned char[tamaño];
@@ -79,12 +73,10 @@ public:
 				}
 				catch (std::bad_alloc &e)
 				{
-					//en caso de no existir ni la menor pues algo mas se podra hacer.
+
 				}
 				break;
 			case IDCONTINUE:
-				//indicamos que continue si la textura y lo indicamos con nulo en el puntero para
-				//que se interprete despues
 				dir_imagen = 0;
 				primero = 0;
 				break;
@@ -92,8 +84,7 @@ public:
 
 		}
 
-		//tenemos que invertir el blue por el red
-		//el green se conserva en posicion
+		// Invert the blue for the red, green remains in position
 		for (unsigned int i = 0; i<(alto*ancho * 4); i += 4)
 		{
 			dir_imagen[i + 2] = pixels[i];
@@ -112,25 +103,21 @@ public:
 
 	void Descarga()
 	{
-		//se deshace de la memoria asignada para contener la imagen
 		delete[] dir_imagen;
 	}
 
 	unsigned char *Dir_Imagen()
 	{
-		//devuelve el puntero
 		return primero;
 	}
 
 	unsigned int Ancho()
 	{
-		//devuelve el ancho
 		return ancho;
 	}
 
 	unsigned int Alto()
 	{
-		//devuelve el alto
 		return alto;
 	}
 };

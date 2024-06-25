@@ -5,41 +5,36 @@
 #include "VectorRR.h"
 #include <cmath>
 
-//estructura para manejar primitivos con posicion, normal y uv's
-struct Vertices {
+//structure to handle primitives with position, normal and uv's
+struct Vertex {
 	float Posx, Posy, Posz;
 	float Normx, Normy, Normz;
 	float u, v;
 	float colorr, colorg, colorb, colora;
 };
 
-//En honor a nuestros ancestros llamaremos "Maya" a la malla
-//estructura que contiene datos de los vertices y sus indices
-struct Maya {
-	Vertices *maya;
+//structure containing data of the vertices and their indices
+struct Mesh {
+	Vertex *mesh;
 	unsigned int *indices;
 };
-
-
-
 
 class Primitivos : public VectorRR
 {
 public:
-	Primitivos() //mis pensamientos!
+	Primitivos()
 	{
 	}
 
-	//generamos los vertices a traves de coordenadas esfericas
-	//conocimiento adquirido en la materia de Fund de las Graficas Computacionales
-	Maya Esfera(int stacks, int slices, float radio, float inicio, float final)
+	//We generate the vertices through spherical coordinates
+	Mesh Esfera(int stacks, int slices, float radio, float inicio, float final)
 	{
-		//Cargamos la estructura con los espacios de memoria necesarios
-		Vertices *verticesxyzSD = new Vertices[stacks*slices * 3];
+		//We load the structure with the necessary memory spaces
+		Vertex *verticesxyzSD = new Vertex[stacks*slices * 3];
 		unsigned int *indices = new unsigned int[stacks*slices * 6];
-		//generamos un objeto para poder transportar los punteros
-		Maya salida;
-		//a darle que es mole de olla!
+		//We generate an object to be able to transport the pointers
+		Mesh output;
+
 		for (int i = 0; i<slices; i++)
 		{
 			for (int j = 0; j<stacks; j++)
@@ -51,14 +46,13 @@ public:
 				verticesxyzSD[indice].Posz = radio*cos(((double)j / (stacks - 1))*(M_PI*(final - inicio)) + M_PI*inicio - M_PI / 2.0)*
 					sin(2.0*M_PI*(double)i / (slices - 1));
 
-				/////////////////////////aqui lo de la multitextura
-
+				//Multi-texture
 				//verticesxyzSD[indice].colorr = Clampea(1.0, 0, 1);
 				//verticesxyzSD[indice].colorg = Clampea(1.0, 0, 1);
 				//verticesxyzSD[indice].colorb = Clampea(1.0, 0, 1);
 				//verticesxyzSD[indice].colora = 0.0;
 				//glColor4f(1.0,1.0,1.0,0.0);
-				////////////////////////////////////////7aqui lo de la multitextura
+				//Multi-texture
 
 				verticesxyzSD[indice].Normx = cos(((double)j / (stacks - 1))*(M_PI*(final - inicio)) + M_PI*inicio - M_PI / 2.0)*
 					cos(2.0*M_PI*(double)i / (slices - 1));
@@ -71,8 +65,7 @@ public:
 			}
 		}
 
-		//ahora la parte mas importante de crear vertices es el algoritmo para unirlos, en este caso sustituiremos
-		//a un algoritmo con un un grupo de indices
+		//Indeces
 		int indice = 0;
 		for (int i = 0; i<slices - 1; i++)
 		{
@@ -88,27 +81,27 @@ public:
 			}
 		}
 
-		//una vez generados los damos a conocer a traves del objeto "salida"
-		salida.maya = verticesxyzSD;
-		salida.indices = indices;
+		//Output
+		output.mesh = verticesxyzSD;
+		output.indices = indices;
 
-		return salida;
+		return output;
 	}
 
-	Maya Plano(int vertx, int vertz, float anchof, float profz)
+	Mesh Plano(int vertx, int vertz, float anchof, float profz)
 	{
-		//Cargamos la estructura con los espacios de memoria necesarios
-		Vertices *verticesxyzSD = new Vertices[vertx*vertz * 3];
+		//We load the structure with the necessary memory spaces
+		Vertex *verticesxyzSD = new Vertex[vertx*vertz * 3];
 		unsigned int *indices = new unsigned int[vertx*vertz * 6];
 
-		//es la separacion entre vertices, se le resta 1 para que el lado correcto
-		//imagine que el ancho es de 10 y tiene 10 vertices, entonces le daria un deltax
-		//de 1, si los vertices van de 0 a 9 entonces la posicion del ultimo vertice
-		//seria 9, si le divide entre vertx -1 le dara 1.1111, y el ultimo vertice sera 10
+		/*The separation between vertices, subtract 1 to make the correct side, imagine that the width is 10 and 
+		it has 10 vertices, then it would give a 'deltax' of 1, if the vertices go from 0 to 9 then the position of 
+		the last vertex would be 9, if you divide it by vertx - 1 it will give you 1.1111 
+		and the last vertex will be 10.*/
 		float deltax = anchof / (vertx - 1);
 		float deltaz = profz / (vertz - 1);
 
-		//crea los vertices
+		// Create Vertex
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -117,14 +110,14 @@ public:
 				verticesxyzSD[z*vertx + x].Posy = 0.0;
 				verticesxyzSD[z*vertx + x].Posz = (float)z*deltaz;
 
-				//carga las normales con cero
+				//Normal Vertex Map
 				verticesxyzSD[z*vertx + x].Normx = 0.0;
 				verticesxyzSD[z*vertx + x].Normy = 0.0;
 				verticesxyzSD[z*vertx + x].Normz = 0.0;
 			}
 		}
 
-		//calcula los uv's
+		//uv's
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -135,7 +128,7 @@ public:
 		}
 
 		VectorRR aux;
-		//crea las normales
+		//Create Normals
 		for (int z = 0; z < (vertz - 1); z++)
 		{
 			for (int x = 0; x < (vertx - 1); x++)
@@ -156,7 +149,7 @@ public:
 			}
 		}
 
-		//Normaliza las normales
+		//Normalize the normals
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -165,8 +158,7 @@ public:
 			}
 		}
 
-		//ahora la parte mas importante de crear vertices es el algoritmo para unirlos, en este caso sustituiremos
-		//a un algoritmo con un un grupo de indices
+		// Indeces
 		int indice = 0;
 		for (int i = 0; i<vertz - 1; i++)
 		{
@@ -182,31 +174,30 @@ public:
 			}
 		}
 
-		//generamos un objeto para poder transportar los punteros
+		//Output
 
-		Maya salida;
+		Mesh output;
 
-		salida.maya = verticesxyzSD;
-		salida.indices = indices;
+		output.mesh = verticesxyzSD;
+		output.indices = indices;
 
-		return salida;
+		return output;
 	}
 
-
-	Maya Plano(int vertx, int vertz, float anchof, float profz, unsigned char *altura, float tile = 1)
+	Mesh Plano(int vertx, int vertz, float anchof, float profz, unsigned char *altura, float tile = 1)
 	{
-		//Cargamos la estructura con los espacios de memoria necesarios
-		Vertices *verticesxyzSD = new Vertices[vertx*vertz * 3];
+		//We load the structure with the necessary memory spaces
+		Vertex *verticesxyzSD = new Vertex[vertx*vertz * 3];
 		unsigned int *indices = new unsigned int[vertx*vertz * 6];
 
-		//es la separacion entre vertices, se le resta 1 para que el lado correcto
-		//imagine que el ancho es de 10 y tiene 10 vertices, entonces le daria un deltax
-		//de 1, si los vertices van de 0 a 9 entonces la posicion del ultimo vertice
-		//seria 9, si le divide entre vertx -1 le dara 1.1111, y el ultimo vertice sera 10
+		/*The separation between vertices, subtract 1 to make the correct side, imagine that the width is 10 and
+		it has 10 vertices, then it would give a 'deltax' of 1, if the vertices go from 0 to 9 then the position of
+		the last vertex would be 9, if you divide it by vertx - 1 it will give you 1.1111
+		and the last vertex will be 10.*/
 		float deltax = anchof / (vertx - 1);
 		float deltaz = profz / (vertz - 1);
 
-		//crea los vertices
+		//Vertex
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -215,14 +206,14 @@ public:
 				verticesxyzSD[z*vertx + x].Posy = (float)altura[z*vertx * 4 + x * 4] / 10.0;
 				verticesxyzSD[z*vertx + x].Posz = (float)z*deltaz - profz / 2.0;
 
-				//carga las normales con cero
+				//Normal Vertex Map
 				verticesxyzSD[z*vertx + x].Normx = 0.0;
 				verticesxyzSD[z*vertx + x].Normy = 1.0;
 				verticesxyzSD[z*vertx + x].Normz = 0.0;
 			}
 		}
 
-		//calcula los uv's
+		//uv's
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -233,7 +224,7 @@ public:
 		}
 
 		VectorRR aux;
-		//crea las normales
+		//Create Normals
 		for (int z = 0; z < (vertz - 1); z++)
 		{
 			for (int x = 0; x < (vertx - 1); x++)
@@ -254,7 +245,7 @@ public:
 			}
 		}
 
-		//Normaliza las normales
+		//Normalize the normals
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -264,9 +255,7 @@ public:
 			}
 		}
 
-
-		//ahora la parte mas importante de crear vertices es el algoritmo para unirlos, en este caso sustituiremos
-		//a un algoritmo con un un grupo de indices
+		// Indeces
 		int indice = 0;
 		for (int i = 0; i<vertz - 1; i++)
 		{
@@ -282,31 +271,31 @@ public:
 			}
 		}
 
-		//generamos un objeto para poder transportar los punteros
+		// Output
 
-		Maya salida;
+		Mesh output;
 
-		salida.maya = verticesxyzSD;
-		salida.indices = indices;
+		output.mesh = verticesxyzSD;
+		output.indices = indices;
 
-		return salida;
+		return output;
 	}
 
-	Maya Plano3t(int vertx, int vertz, float anchof, float profz, unsigned char *altura, float tile,
+	Mesh Plano3t(int vertx, int vertz, float anchof, float profz, unsigned char *altura, float tile,
 		float alt1, float alt2, float alt3)
 	{
-		//Cargamos la estructura con los espacios de memoria necesarios
-		Vertices *verticesxyzSD = new Vertices[vertx*vertz * 3];
+		//We load the structure with the necessary memory spaces
+		Vertex *verticesxyzSD = new Vertex[vertx*vertz * 3];
 		unsigned int *indices = new unsigned int[vertx*vertz * 6];
 
-		//es la separacion entre vertices, se le resta 1 para que el lado correcto
-		//imagine que el ancho es de 10 y tiene 10 vertices, entonces le daria un deltax
-		//de 1, si los vertices van de 0 a 9 entonces la posicion del ultimo vertice
-		//seria 9, si le divide entre vertx -1 le dara 1.1111, y el ultimo vertice sera 10
+		/*The separation between vertices, subtract 1 to make the correct side, imagine that the width is 10 and
+		it has 10 vertices, then it would give a 'deltax' of 1, if the vertices go from 0 to 9 then the position of
+		the last vertex would be 9, if you divide it by vertx - 1 it will give you 1.1111
+		and the last vertex will be 10.*/
 		float deltax = anchof / (vertx - 1);
 		float deltaz = profz / (vertz - 1);
 
-		//crea los vertices
+		// Create Vertex
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -315,7 +304,7 @@ public:
 				verticesxyzSD[z*vertx + x].Posy = (float)altura[z*vertx * 4 + x * 4] / 10.0;
 				verticesxyzSD[z*vertx + x].Posz = (float)z*deltaz - profz / 2.0;
 
-				//carga las normales con cero
+				//Normal Vertex Map
 				verticesxyzSD[z*vertx + x].Normx = 0.0;
 				verticesxyzSD[z*vertx + x].Normy = 1.0;
 				verticesxyzSD[z*vertx + x].Normz = 0.0;
@@ -343,7 +332,7 @@ public:
 			}
 		}
 
-		//calcula los uv's
+		//uv's
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -354,7 +343,7 @@ public:
 		}
 
 		VectorRR aux;
-		//crea las normales
+		//Create Normals
 		for (int z = 0; z < (vertz - 1); z++)
 		{
 			for (int x = 0; x < (vertx - 1); x++)
@@ -375,7 +364,7 @@ public:
 			}
 		}
 
-		//Normaliza las normales
+		//Normalize the normals
 		for (int z = 0; z < vertz; z++)
 		{
 			for (int x = 0; x < vertx; x++)
@@ -385,9 +374,8 @@ public:
 			}
 		}
 
-
-		//ahora la parte mas importante de crear vertices es el algoritmo para unirlos, en este caso sustituiremos
-		//a un algoritmo con un un grupo de indices
+		
+		// Indices
 		int indice = 0;
 		for (int i = 0; i<vertz - 1; i++)
 		{
@@ -403,14 +391,14 @@ public:
 			}
 		}
 
-		//generamos un objeto para poder transportar los punteros
+		// Output
 
-		Maya salida;
+		Mesh output;
 
-		salida.maya = verticesxyzSD;
-		salida.indices = indices;
+		output.mesh = verticesxyzSD;
+		output.indices = indices;
 
-		return salida;
+		return output;
 	}
 };
 #endif

@@ -105,4 +105,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="basic.frag">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="basic.vert">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

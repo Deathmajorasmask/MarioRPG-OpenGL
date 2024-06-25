@@ -1,95 +1,470 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ProyectoBase.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ProyectoBase.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Main.cpp
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\vectorrr.h(49): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(50): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(52): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(64): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(65): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(67): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(214): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(215): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(314): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(315): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(316): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(326): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(327): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\geometrias.h(328): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\imagenes.h(61): warning C4101: 'e' : unreferenced local variable
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\imagenes.h(80): warning C4101: 'e' : unreferenced local variable
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\terrain.h(87): warning C4101: 'indice' : unreferenced local variable
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(65): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(68): warning C4244: '*=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\billboard.h(69): warning C4244: '*=' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\fog.h(16): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(316): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(318): warning C4305: '=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\animations.h(331): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\water.h(167): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\water.h(171): warning C4305: 'initializing' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(112): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(112): warning C4154: deletion of an array expression; conversion to pointer supplied
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(190): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(118): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(118): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(120): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(131): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(144): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(224): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(242): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(251): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(259): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(271): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(301): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(372): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(393): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(436): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(446): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(452): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(452): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(468): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(474): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(476): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(484): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(488): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(507): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(513): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(515): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(520): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(564): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(570): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(572): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(588): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(595): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(628): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(634): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(648): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(651): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(657): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(659): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(689): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(705): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(715): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(722): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(723): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(730): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(736): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(737): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(743): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(744): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(764): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(774): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(792): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(801): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(812): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(813): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(821): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(834): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(846): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\scene.h(863): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\main.cpp(183): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\carpeta de documentos\fcfm portafolio\c++_opengl_mariorpg\mariorpg\pf poo\particle.h(76): warning C4715: 'Particles::Particle::Update' : not all control paths return a value
-  PF POO.vcxproj -> C:\Carpeta de documentos\FCFM Portafolio\C++_OpenGL_MarioRPG\MARIORPG\Debug\PF POO.exe
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(49,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(55,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(57,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(58,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(63,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(65,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(66,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(71,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(73,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(74,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(170,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\VectorRR.h(180,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(43,122): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(45,39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(46,122): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(57,117): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(59,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(60,117): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(205,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(206,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(207,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(303,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(304,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(305,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(315,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(316,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Geometrias.h(317,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Imagenes.h(61,26): warning C4101: 'e': unreferenced local variable
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Imagenes.h(80,28): warning C4101: 'e': unreferenced local variable
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Terrain.h(85,7): warning C4101: 'indice': unreferenced local variable
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Billboard.h(65,41): warning C4244: 'argument': conversion from 'GLdouble' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Billboard.h(65,33): warning C4244: 'argument': conversion from 'GLdouble' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Billboard.h(65,25): warning C4244: 'argument': conversion from 'GLdouble' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Billboard.h(68,22): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Billboard.h(69,22): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Fog.h(16,19): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Animations.h(316,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Animations.h(318,12): warning C4305: '=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Animations.h(331,1): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Water.h(56,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Water.h(60,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Particle.h(112,4): warning C4156: deletion of an array expression without using the array form of 'delete'; array form substituted
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Particle.h(112,4): warning C4154: deletion of an array expression; conversion to pointer supplied
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Particle.h(190,18): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(118,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(118,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(118,38): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(120,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(120,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(120,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(131,25): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(131,30): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(131,35): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(144,27): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(144,23): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(144,19): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(224,29): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(224,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(224,21): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(242,33): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(242,28): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(242,23): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(251,33): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(251,28): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(251,23): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(259,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(259,27): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(259,23): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(271,1): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(301,1): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(372,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(393,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(436,16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(446,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(446,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(446,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(452,1): warning C4305: '-=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(452,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(468,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(468,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(468,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(474,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(474,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(476,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(476,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(476,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(484,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(488,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(488,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(488,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(507,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(507,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(507,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(513,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(513,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(515,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(515,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(515,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(520,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(564,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(564,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(564,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(570,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(570,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(572,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(572,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(572,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(588,69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(588,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(588,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(595,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(595,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(595,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(628,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(634,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(648,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(651,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(651,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(651,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(657,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(657,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(659,30): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(659,26): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(659,22): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(689,21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(705,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(715,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(715,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(716,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(722,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(722,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(723,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(729,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(729,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(730,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(736,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(736,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(737,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(743,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(743,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(744,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(764,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(774,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(792,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(792,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(801,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(801,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(812,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(813,28): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(813,24): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(813,20): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(821,1): warning C4305: '+=': truncation from 'double' to 'float'
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(834,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(846,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Scene.h(863,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Main.cpp(183,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\FZGC\Project_CPP\MARIORPG\PF POO\Particle.h(76,1): warning C4715: 'Particles::Particle::Update': not all control paths return a value
+  PF POO.vcxproj -> C:\FZGC\Project_CPP\MARIORPG\Debug\PF POO.exe

@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-using namespace std;
 #include "glm.h"
 #include "BMPLoader.h"
+using namespace std;
 
 namespace EDXFramework {
 

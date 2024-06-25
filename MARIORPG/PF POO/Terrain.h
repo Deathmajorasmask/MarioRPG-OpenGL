@@ -5,7 +5,7 @@
 #include "ShaderDemo.h"
 using namespace std;
 
-
+// Terraint Multi - Texture
 class Terrain : public Primitivos, public Imagenes
 {
 
@@ -17,9 +17,8 @@ private:
 
 public:
 
-	Maya terreno;
+	Mesh terreno;
 	int verx, verz;
-	//el nombre numerico de la textura en cuestion, por lo pronto una
 	unsigned int planoTextura0;
 	unsigned int planoTextura1;
 	unsigned int planoTextura2;
@@ -28,16 +27,16 @@ public:
 	{
 		anchof = ancho;
 		proff = prof;
-		//cargamos la textura de la figura
+		// We load the texture of the figure
 		Carga(alturas);
-		//en caso del puntero de la imagen sea nulo se brica esta opcion
+		// If the image pointer is null, this option is created
 		//terreno = Plano( Ancho(), Alto(), ancho, prof, Dir_Imagen(), 30);	
 		terreno = Plano3t(Ancho(), Alto(), ancho, prof, Dir_Imagen(), 30, 00.0, 85.0, 130.0);
 		deltax = anchof / Ancho();
 		deltaz = proff / Alto();
 		verx = Ancho();
 		verz = Alto();
-		//disponemos la textura del gdi.
+		// The gdi texture.
 		Descarga();
 		Carga(textura);
 		glGenTextures(1, &planoTextura0);
@@ -73,8 +72,7 @@ public:
 
 	~Terrain()
 	{
-		//nos aseguramos de disponer de los recursos previamente reservados
-		delete terreno.maya;
+		delete terreno.mesh;
 		delete terreno.indices;
 		glDeleteTextures(1, &planoTextura0);
 		glDeleteTextures(1, &planoTextura1);
@@ -93,17 +91,17 @@ public:
 		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 		gpuDemo->use();
 
-		//habilitamos la posibilidad de guardar arreglos de procesamiento inmediato
+		// We enable the ability to save immediate processing arrangements
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glEnableClientState(GL_NORMAL_ARRAY);
 		glEnableClientState(GL_COLOR_ARRAY);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-		//asignamos punteros de vertices, normales y texturas al buffer de conexiones que sigue
-		glVertexPointer(3, GL_FLOAT, sizeof(Vertices), &terreno.maya[0].Posx);
-		glNormalPointer(GL_FLOAT, sizeof(Vertices), &terreno.maya[0].Normx);
-		glTexCoordPointer(2, GL_FLOAT, sizeof(Vertices), &terreno.maya[0].u);
-		glColorPointer(4, GL_FLOAT, sizeof(Vertices), &terreno.maya[0].colorr);
+		// Assign vertex, normal and texture pointers to the connection buffer
+		glVertexPointer(3, GL_FLOAT, sizeof(Vertex), &terreno.mesh[0].Posx);
+		glNormalPointer(GL_FLOAT, sizeof(Vertex), &terreno.mesh[0].Normx);
+		glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex), &terreno.mesh[0].u);
+		glColorPointer(4, GL_FLOAT, sizeof(Vertex), &terreno.mesh[0].colorr);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, planoTextura0);
@@ -116,9 +114,9 @@ public:
 		gpuDemo->PonTextura("text2", 1);
 		gpuDemo->PonTextura("text3", 2);
 
-		//conectamos todos los vertices previamente cargados a traves de sus punteros para procesarse
+		// We connect all previously loaded vertices through their pointers to be processed
 		glDrawElements(GL_TRIANGLES, (verx - 1)*(verz - 1) * 6, GL_UNSIGNED_INT, terreno.indices);
-		//desocupamos la asignacion para que podamos utilizarlo con un nuevo elemento
+		// We clear the allocation so we can use it with a new element
 
 		glDisableClientState(GL_VERTEX_ARRAY);
 		glDisableClientState(GL_NORMAL_ARRAY);
@@ -137,58 +135,57 @@ public:
 
 	float Superficie(float x, float z)
 	{
-		//obtenemos el indice pero podria incluir una fraccion
+		//// We get the index but it could include a fraction
 		float indicefx = (x + anchof / 2) / deltax;
 		float indicefz = (z + proff / 2) / deltaz;
-		//nos quedamos con solo la parte entera del indice
+		// The entire index part.
 		int indiceix = (int)indicefx;
 		int indiceiz = (int)indicefz;
-		//nos quedamos con solo la fraccion del indice
+		// The index fraction
 		float difx = indicefx - indiceix;
 		float difz = indicefz - indiceiz;
 
 		float altura;
 		float D;
 
-		//el cuadro del terreno esta formado por dos triangulos, si difx es mayor que dify 
-		//entonces estamos en el triangulo de abajo en caso contrario arriba
+		/*The terrain square is made up of two triangles, if difx is greater than dify then we are in the bottom triangle, otherwise up.*/
 		if (difx > difz)
 		{
-			//obtenemos el vector 1 de dos que se necesitan
-			VectorRR v1(terreno.maya[indiceix + 1 + (indiceiz + 1) * verx].Posx - terreno.maya[indiceix + indiceiz * verx].Posx,
-				terreno.maya[indiceix + 1 + (indiceiz + 1) * verx].Posy - terreno.maya[indiceix + indiceiz * verx].Posy,
-				terreno.maya[indiceix + 1 + (indiceiz + 1) * verx].Posz - terreno.maya[indiceix + indiceiz * verx].Posz);
-			//obtenemos el vector 2 de dos
-			VectorRR v2(terreno.maya[indiceix + 1 + indiceiz * verx].Posx - terreno.maya[indiceix + indiceiz * verx].Posx,
-				terreno.maya[indiceix + 1 + indiceiz * verx].Posy - terreno.maya[indiceix + indiceiz * verx].Posy,
-				terreno.maya[indiceix + 1 + indiceiz * verx].Posz - terreno.maya[indiceix + indiceiz * verx].Posz);
+			// We obtain vector 1 of two that are needed
+			VectorRR v1(terreno.mesh[indiceix + 1 + (indiceiz + 1) * verx].Posx - terreno.mesh[indiceix + indiceiz * verx].Posx,
+				terreno.mesh[indiceix + 1 + (indiceiz + 1) * verx].Posy - terreno.mesh[indiceix + indiceiz * verx].Posy,
+				terreno.mesh[indiceix + 1 + (indiceiz + 1) * verx].Posz - terreno.mesh[indiceix + indiceiz * verx].Posz);
+			// We obtain vector 2 of two that are needed
+			VectorRR v2(terreno.mesh[indiceix + 1 + indiceiz * verx].Posx - terreno.mesh[indiceix + indiceiz * verx].Posx,
+				terreno.mesh[indiceix + 1 + indiceiz * verx].Posy - terreno.mesh[indiceix + indiceiz * verx].Posy,
+				terreno.mesh[indiceix + 1 + indiceiz * verx].Posz - terreno.mesh[indiceix + indiceiz * verx].Posz);
 
-			//con el producto punto obtenemos la normal y podremos obtener la ecuacion del plano
-			//la parte x de la normal nos da A, la parte y nos da B y la parte z nos da C
+			/*With the dot product we obtain the normal and we can obtain the equation of the plane, 
+			the x part of the normal gives us A, the y part gives us B and the z part gives us C*/
 			VectorRR normalPlano = Cruz(v1, v2);
-			//entonces solo falta calcular D
-			D = -1 * (normalPlano.X * terreno.maya[indiceix + indiceiz * verx].Posx +
-				normalPlano.Y * terreno.maya[indiceix + indiceiz * verx].Posy +
-				normalPlano.Z * terreno.maya[indiceix + indiceiz * verx].Posz);
-			//sustituyendo obtenemos la altura de contacto en el terreno
+			// Calculate D
+			D = -1 * (normalPlano.X * terreno.mesh[indiceix + indiceiz * verx].Posx +
+				normalPlano.Y * terreno.mesh[indiceix + indiceiz * verx].Posy +
+				normalPlano.Z * terreno.mesh[indiceix + indiceiz * verx].Posz);
+			// substituting we obtain the height of contact with the ground
 			altura = ((-normalPlano.X * x - normalPlano.Z * z - D) / normalPlano.Y);
 		}
 		else
 		{
-			VectorRR v1(terreno.maya[indiceix + (indiceiz + 1) * verx].Posx - terreno.maya[indiceix + indiceiz * verx].Posx,
-				terreno.maya[indiceix + (indiceiz + 1) * verx].Posy - terreno.maya[indiceix + indiceiz * verx].Posy,
-				terreno.maya[indiceix + (indiceiz + 1) * verx].Posz - terreno.maya[indiceix + indiceiz * verx].Posz);
+			VectorRR v1(terreno.mesh[indiceix + (indiceiz + 1) * verx].Posx - terreno.mesh[indiceix + indiceiz * verx].Posx,
+				terreno.mesh[indiceix + (indiceiz + 1) * verx].Posy - terreno.mesh[indiceix + indiceiz * verx].Posy,
+				terreno.mesh[indiceix + (indiceiz + 1) * verx].Posz - terreno.mesh[indiceix + indiceiz * verx].Posz);
 
-			VectorRR v2(terreno.maya[indiceix + 1 + (indiceiz + 1) * verx].Posx - terreno.maya[indiceix + indiceiz * verx].Posx,
-				terreno.maya[indiceix + 1 + (indiceiz + 1)* verx].Posy - terreno.maya[indiceix + indiceiz * verx].Posy,
-				terreno.maya[indiceix + 1 + (indiceiz + 1)* verx].Posz - terreno.maya[indiceix + indiceiz * verx].Posz);
+			VectorRR v2(terreno.mesh[indiceix + 1 + (indiceiz + 1) * verx].Posx - terreno.mesh[indiceix + indiceiz * verx].Posx,
+				terreno.mesh[indiceix + 1 + (indiceiz + 1)* verx].Posy - terreno.mesh[indiceix + indiceiz * verx].Posy,
+				terreno.mesh[indiceix + 1 + (indiceiz + 1)* verx].Posz - terreno.mesh[indiceix + indiceiz * verx].Posz);
 
 
 			VectorRR normalPlano = Cruz(v1, v2);
 
-			D = -1 * (normalPlano.X * terreno.maya[indiceix + indiceiz * verx].Posx +
-				normalPlano.Y * terreno.maya[indiceix + indiceiz * verx].Posy +
-				normalPlano.Z * terreno.maya[indiceix + indiceiz * verx].Posz);
+			D = -1 * (normalPlano.X * terreno.mesh[indiceix + indiceiz * verx].Posx +
+				normalPlano.Y * terreno.mesh[indiceix + indiceiz * verx].Posy +
+				normalPlano.Z * terreno.mesh[indiceix + indiceiz * verx].Posz);
 
 			altura = ((-normalPlano.X * x - normalPlano.Z * z - D) / normalPlano.Y);
 		}
