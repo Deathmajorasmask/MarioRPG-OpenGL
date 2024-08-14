@@ -1,11 +1,6 @@
 #ifndef __Animations
 #define __Animations
 
-//void MovMario(int dirMov);
-//Menor de MZ- es hacia arriba, Mz+ es hacia abajo del mapa
-//MX- es hacía la izquierda, Mx+ es hacia la derecha 
-
-
 class Animatic {
 	friend class Scene;
 private:
@@ -26,22 +21,13 @@ private:
 	static int coinPosx1[3], coinPosz1[3], coinPosx2[3], coinPosz2[3], coinPosx3[3], coinPosz3[3] , coinPosx4[3] , coinPosz4[3],
 		coinPosx5[3] , coinPosz5[3];
 
-	//Puente mx0 mz13 , 10 mz13 ||mx0 mz8- mx-16 mz8 || mx-16 mz8 - mz7||mx-21mz7 - mz6||mx-21/mz6
-	//mx-24 mz4/mx-26 mz4 || mx-26 mz1/mx-29 mz1 || mx-29 mz-19||mx-42 mz-19||mx-42 mz-9||mx-44 mz-9
-	//mx-44 mz-2||mx-45 mz-2||mx-45 mz2||mx-47 mz2||mx-47 mz29
-	//mx-45 mz29||mx-45 mz33||mx-43 mz33||mx-43 mz36||mx-39 mz36||mx-34 mz36||mx-34 mz42||mx-28 mz42
-	//mx-28 mz44||mx-15 mz44||mx-15 mz46||mx4 mz46||mx4 mz30||mx15 mz30||mx15 mz14||mx22 mz14||mx22 mz7
-	//mx7 mz-11||mx3 mz-11||mx3 mz8
-	//Aumento del puente mx7-mz7||mx3-mz7||||mx7 mz-11/mx3
-
 public:
 
-
 	void manageAnimationMario(int stateAnimation) {
-		if (stateAnimation = 1) {
+		if (stateAnimation == 1) {
 			animationMario++;
 		}
-		if (stateAnimation = 0){
+		if (stateAnimation == 0){
 			animationMario = 0;
 		}
 	}

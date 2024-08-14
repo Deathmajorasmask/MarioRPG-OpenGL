@@ -21,7 +21,6 @@ Scene *scene;
 GamePadRR *gamPad;
 bool renderiza = false;
 
-
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	HWND hwndVentana;
@@ -90,23 +89,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				if (gamPad->IsConnected()) {
 
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_A) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_B) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						if (scene->battlereturn()) {
 							scene->pressB();
 						}
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_X) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_Y) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_UP) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						if (scene->battlereturn()) {
 							scene->pressUp();
 						}
@@ -116,7 +110,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_DOWN) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						if (scene->battlereturn()) {
 							scene->pressDown();
 						}
@@ -126,7 +119,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_RIGHT) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						if (scene->battlereturn()) {
 
 						}
@@ -136,7 +128,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						
 					}
 					if (gamPad->GetState().Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_LEFT) {
-						//MessageBox(hwndVentana, "Presiono A", "Mensaje", MB_OK);
 						if (scene->battlereturn()) {
 
 						}
@@ -148,7 +139,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 					
 				}
 				else{
-				//	//aqui ponemos un messgaebox para decir que se perdio la conexion con el gamepad
+				// Lost connection GamePad
 				}
 
 			}
@@ -191,19 +182,15 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 			return 0;
 		case VK_UP:
 			scene->turnUp();
-			renderiza = true;
 			return 0;
 		case VK_DOWN:
 			scene->turnDown();
-			renderiza = true;
 			return 0;
 		case VK_LEFT:
 			scene->turnLeft();
-			renderiza = true;
 			return 0;
 		case VK_RIGHT:
 			scene->turnRight();
-			renderiza = true;
 			return 0;
 		case 0x44: //D
 			if (scene->battlereturn()) {
@@ -213,7 +200,6 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 				scene->moveRight();
 				scene->manageAnimationMario(1);
 			}
-			renderiza = true;
 			return 0;
 		case 0x41: //A
 			if (scene->battlereturn()) {
@@ -223,7 +209,6 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 				scene->moveLeft();
 				scene->manageAnimationMario(1);
 			}
-			renderiza = true;
 			return 0;
 		case 0x53: //S
 			if (scene->battlereturn()) {
@@ -233,7 +218,6 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 				scene->moveForward();
 				scene->manageAnimationMario(1);
 			}
-			renderiza = true;
 			return 0;
 		case 0x57: //W
 			if (scene->battlereturn()) {
@@ -243,21 +227,17 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 				scene->moveBackward();
 				scene->manageAnimationMario(1);
 			}
-			renderiza = true;
 			return 0;
 		case 69: //E
 			scene->moveUp();
-			renderiza = true;
 			return 0;
 		case 81: //Q
 			scene->moveDown();
-			renderiza = true;
 			return 0;
 		case 74: //J
 			if (scene->victoriaAbsurda()) {
 				MessageBox(hWnd, "You should feel dirty passing the beta with cheats", "Cheating", MB_OK);
 			}
-
 			return 0;
 		case 75: //k
 			scene->switrenderMulti();
@@ -270,11 +250,11 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 			}
 			return 0;
 		case 79: //O
-			scene->switCamareO(); //regresar Camara normal
+			scene->switCamareO(); // Default camera
 			return 0;
 
 		case 80: //P
-			scene->switCamareC(); //regresar Camara normal
+			scene->switCamareC(); // Default camera
 			return 0;
 
 		}
