@@ -84,6 +84,7 @@
     <ClCompile Include="Animations.cpp" />
     <ClCompile Include="BMPLoader.cpp" />
     <ClCompile Include="glm.cpp" />
+    <ClCompile Include="gltext_example.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenMove.cpp" />
@@ -97,6 +98,7 @@
     <ClInclude Include="FogEs.h" />
     <ClInclude Include="GamePadRR.h" />
     <ClInclude Include="glew.h" />
+    <ClInclude Include="gltext.h" />
     <ClInclude Include="OpenMove.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="resources.h" />

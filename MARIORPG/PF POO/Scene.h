@@ -17,6 +17,13 @@
 #include <stdlib.h>
 #include "Particle.h"
 #include "OpenMove.h"
+// Text Rendering
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <GLFW/glfw3.h> /* https://github.com/glfw/glfw */
+#define GLT_IMPLEMENTATION
+#include "gltext.h" /* https://github.com/vallentin/glText */
 
 using namespace Particles;
 
@@ -143,6 +150,37 @@ public:
 		//OpenMove::scale(.3, .3, .3);
 		OpenMove::scale(.3, .3, .3);
 		skyDay->Draw();
+		glPopMatrix();
+
+		glPushMatrix();
+		// Initialize glText
+		gltInit();
+
+		// Creating text
+		GLTtext* text = gltCreateText();
+		gltSetText(text, "Text Example Native");
+
+		// Begin text drawing (this for instance calls glUseProgram)
+		gltBeginDraw();
+
+		// Draw any amount of text between begin and end
+		gltColor(1.0f, 1.0f, 1.0f, 1.0f);
+		gltDrawText2D(text, 0.0f, 0.0f, 1.0f); // x=0.0, y=0.0, scale=1.0
+
+		/*gltDrawText2DAligned(text,
+			(GLfloat)(1080 / 2),
+			(GLfloat)(720 / 2),
+			3.0f,
+			GLT_CENTER, GLT_CENTER);*/
+
+		// Finish drawing text
+		gltEndDraw();
+
+		//// Deleting text
+		gltDeleteText(text);
+
+		//// Destroy glText
+		gltTerminate();
 		glPopMatrix();
 
 		if (battleGet) {
@@ -1002,6 +1040,7 @@ public:
 
 		}
 		
+
 		//No tocar
 		SwapBuffers(hDC);
 	}

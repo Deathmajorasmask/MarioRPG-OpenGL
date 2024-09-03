@@ -33,6 +33,9 @@
     <ClCompile Include="Animations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gltext_example.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPLoader.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OpenMove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gltext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
