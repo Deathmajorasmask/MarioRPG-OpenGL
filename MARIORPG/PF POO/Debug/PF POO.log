@@ -465,6 +465,6 @@ C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\PF POO\Scene.h(883,30): warning C4244: 'arg
 C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\PF POO\Scene.h(900,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'Main.cpp')
   
-C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\PF POO\Main.cpp(174,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\PF POO\Main.cpp(182,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\PF POO\Particle.h(76,1): warning C4715: 'Particles::Particle::Update': not all control paths return a value
   PF POO.vcxproj -> C:\FZGC\SKR\MarioRPG-OpenGL\MARIORPG\Debug\PF POO.exe

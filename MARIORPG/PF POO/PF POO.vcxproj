@@ -53,13 +53,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Resources/GLEW/include;$(SolutionDir)/../External Resources/GLFW/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Resources/GLEW/include;$(SolutionDir)/../External Resources/GLFW/include;$(SolutionDir)/../External Resources/OpenAL/my_library_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/../External Resources/GLFW/lib-vc2015;$(SolutionDir)/../External Resources/GLEW/lib/Release/Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>XInput.lib;winmm.lib;opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/../External Resources/GLFW/lib-vc2015;$(SolutionDir)/../External Resources/GLEW/lib/Release/Win32;$(SolutionDir)/../External Resources/OpenAL/my_built_libraries/debug/OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>XInput.lib;winmm.lib;opengl32.lib;glew32s.lib;glfw3.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -83,6 +83,8 @@
   <ItemGroup>
     <ClCompile Include="Animations.cpp" />
     <ClCompile Include="BMPLoader.cpp" />
+    <ClCompile Include="customOpenALSoft.cpp" />
+    <ClCompile Include="dr_wav_impl.c" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="gltext_example.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -94,6 +96,7 @@
     <ClInclude Include="Billboard.h" />
     <ClInclude Include="BMPLoader.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="customOpenALSoft.h" />
     <ClInclude Include="EDXFramework.h" />
     <ClInclude Include="FogEs.h" />
     <ClInclude Include="GamePadRR.h" />

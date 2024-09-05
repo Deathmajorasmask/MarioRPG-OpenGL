@@ -7,6 +7,7 @@
 #include "GamePadRR.h"
 #include "Animations.h"
 #include "resources.h"
+#include "customOpenALSoft.h"
 #pragma comment (lib, "glew32.lib") 
 #pragma comment(lib,"opengl32.lib")
 #pragma comment(lib,"glu32.lib") 
@@ -19,6 +20,7 @@ void DefPixelFormat(HDC hDC);
 HDC hContextoVentana;
 Scene *scene;
 GamePadRR *gamPad;
+customOpenALSoft* p_customOpenALSoft;
 bool renderiza = false;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -59,7 +61,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// Scene instance
 	scene = new Scene(hwndVentana);
 	gamPad = new GamePadRR(1);
-	
+	p_customOpenALSoft = new customOpenALSoft();
 
 	// Create a timer with the specified time-out value
 	SetTimer(hwndVentana,// Window handler that will receive timer messages
@@ -68,8 +70,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		NULL);// direction of timer procedure
 
 	MSG msg = { 0 };
+	p_customOpenALSoft->customOALSSoundStereo();
+	p_customOpenALSoft->customOALSSoundMono();
 	while (TRUE)
 	{
+		// Music wav file
+		p_customOpenALSoft->customOALSSoundStereoBucle();
+		p_customOpenALSoft->customOALSSoundMonoBucle();
+
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			TranslateMessage(&msg);
@@ -264,6 +272,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 		break;
 	case WM_DESTROY:
 	{
+		delete p_customOpenALSoft;
 		KillTimer(hWnd, Timer1);
 		delete scene->skyDay;
 		delete scene->terrain;

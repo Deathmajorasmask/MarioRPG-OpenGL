@@ -36,6 +36,12 @@
     <ClCompile Include="gltext_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="customOpenALSoft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dr_wav_impl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPLoader.h">
@@ -108,6 +114,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gltext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="customOpenALSoft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
