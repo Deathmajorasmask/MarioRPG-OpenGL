@@ -17,6 +17,7 @@
 mono_crash.*
 
 # Build results
+[Dd]ebug
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -402,3 +403,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/MARIORPG/PF POO/Debug
+/MARIORPG/PF POO/Debug
