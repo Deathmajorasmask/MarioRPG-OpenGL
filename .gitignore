@@ -17,7 +17,6 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -32,9 +31,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# DLL Save
-[Dd]ebug/*
-!MARIORPG/Debug/.dll
+# Ignorar todos los archivos en la carpeta Debug
+Debug/**
+
+# Exceptuar los archivos .lib y .dll
+!Debug/**/*.lib
+!Debug/**/*.dll
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
