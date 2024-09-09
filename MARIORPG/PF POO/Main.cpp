@@ -70,8 +70,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		NULL);// direction of timer procedure
 
 	MSG msg = { 0 };
-	p_customOpenALSoft->customOALSSoundStereo();
-	p_customOpenALSoft->customOALSSoundMono();
+	p_customOpenALSoft->customOALSSoundStereo("sounds/TestSound.wav");
+	p_customOpenALSoft->customOALSSoundMono("sounds/TestSound_Mono.wav");
 	while (TRUE)
 	{
 		// Music wav file

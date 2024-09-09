@@ -8,13 +8,13 @@
 
 class customOpenALSoft
 {
-public:
+private:
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// find the default audio device
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	const ALCchar* defaultDeviceString = alcGetString(/*device*/nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
 	ALCdevice* device = alcOpenDevice(defaultDeviceString);
-	
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Create an OpenAL audio context from the device
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,14 +39,14 @@ public:
 	ALuint stereoSource;
 
 	ALint sourceState;
-
+public:
 	customOpenALSoft();
 	~customOpenALSoft();
-	int customOALSSoundMono();
+	int customOALSSoundMono(std::string dirFileWav, bool loopSound = false, float Velx = 0.0f, float Vely = 0.0f, float Velz = 0.0f, float Posx = 1.0f, float Posy = 0.0f, float Posz = 0.0f);
 	int customOALSSoundMonoBucle();
-	int customOALSSoundStereo();
+	int customOALSSoundMonoStop();
+	int customOALSSoundStereo(std::string dirFileWav, bool loopSound = false);
 	int customOALSSoundStereoBucle();
-private:
-
+	int customOALSSoundStereoStop();
 };
 
