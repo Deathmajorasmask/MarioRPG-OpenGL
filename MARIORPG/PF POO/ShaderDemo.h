@@ -7,6 +7,7 @@
 
 class ShaderDemo {
 public:
+	char bufferMsgBox[255];
 	char *punt;
 	unsigned int programa;
 	GLuint vertShader;
@@ -27,7 +28,9 @@ public:
 		// Carga el shader
 		std::ifstream inFile(nombre, std::ifstream::in);
 		if (!inFile) {
-			exit(1);
+			// ERROR STATUS
+			sprintf_s(bufferMsgBox, "ShaderDemo() failed: can't open file:%s \n", nombre);
+			MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
 		}
 
 		//reservamos memoria para contenerlo
@@ -44,7 +47,7 @@ public:
 		// Object 
 		vertShader = glCreateShader(GL_VERTEX_SHADER);
 		if (0 == vertShader) {
-			exit(1);
+			MessageBox(NULL, "ShaderDemo() failed: vertShader = glCreateShader \n", "Fatal Error", MB_OK);
 		}
 
 		// Load the source code into the shader object
@@ -78,7 +81,8 @@ public:
 		// Load Shader
 		std::ifstream fragFile(nombref, std::ifstream::in);
 		if (!fragFile) {
-			exit(1);
+			sprintf_s(bufferMsgBox, "ShaderDemo() failed: can't open file f:%s \n", nombref);
+			MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
 		}
 
 		shaderCode = (char *)malloc(10000);
@@ -93,7 +97,7 @@ public:
 		// Create Object
 		fragShader = glCreateShader(GL_FRAGMENT_SHADER);
 		if (0 == fragShader) {
-			exit(1);
+			MessageBox(NULL, "ShaderDemo() failed: fragShader = glCreateShader \n", "Fatal Error", MB_OK);
 		}
 
 		// Load Code	
@@ -168,7 +172,7 @@ public:
 	{
 		programHandle = glCreateProgram();
 		if (0 == programHandle) {
-			exit(1);
+			MessageBox(NULL, "ShaderDemo() failed: ligador = programHandle \n", "Fatal Error", MB_OK);
 		}
 
 		//// Bind index 0 to the shader input variable "VertexPosition"

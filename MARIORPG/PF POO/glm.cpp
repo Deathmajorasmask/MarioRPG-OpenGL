@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <iostream>
 #include "glm.h" 
 #pragma warning(disable:4996)
 #define T(x) (model->triangles[(x)])
@@ -270,7 +271,10 @@ glmReadMTL(GLMmodel* model, char* name)
   if (!file) {
     fprintf(stderr, "glmReadMTL() failed: can't open material file \"%s\".\n",
 	    filename);
-    exit(1);
+    // ERROR STATUS
+    char bufferMsgBox[255];
+    sprintf_s(bufferMsgBox, "glmReadMTL() failed: can't open material file:%s \n", filename);
+    MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
   }
   free(filename);
 
@@ -396,9 +400,11 @@ glmWriteMTL(GLMmodel* model, char* modelpath, char* mtllibname)
   /* open the file */
   file = fopen(filename, "w");
   if (!file) {
-    fprintf(stderr, "glmWriteMTL() failed: can't open file \"%s\".\n",
-	    filename);
-    exit(1);
+    fprintf(stderr, "glmWriteMTL() failed: can't open file \"%s\".\n", filename);
+    // ERROR STATUS
+    char bufferMsgBox[255];
+    sprintf_s(bufferMsgBox, "glmWriteMTL() failed: can't open file:%s \n", filename);
+    MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
   }
   free(filename);
 
@@ -473,7 +479,10 @@ glmFirstPass(GLMmodel* model, FILE* file)
 	break;
       default:
 	printf("glmFirstPass(): Unknown token \"%s\".\n", buf);
-	exit(1);
+    // ERROR STATUS
+    char bufferMsgBox[255];
+    sprintf_s(bufferMsgBox, "glmFirstPass(): Unknown token:%s \n", buf);
+    MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
 	break;
       }
       break;
@@ -1310,9 +1319,11 @@ glmReadOBJ(char* filename)
   /* open the file */
   file = fopen(filename, "r");
   if (!file) {
-    fprintf(stderr, "glmReadOBJ() failed: can't open data file \"%s\".\n",
-	    filename);
-    exit(1);
+    fprintf(stderr, "glmReadOBJ() failed: can't open data file \"%s\".\n", filename);
+    // ERROR STATUS
+    char bufferMsgBox[255];
+    sprintf_s(bufferMsgBox, "glmReadOBJ() failed: can't open data file:%s \n", filename);
+    MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
   }
 
   /* allocate a new model */
@@ -1431,9 +1442,11 @@ glmWriteOBJ(GLMmodel* model, char* filename, GLuint mode)
   /* open the file */
   file = fopen(filename, "w");
   if (!file) {
-    fprintf(stderr, "glmWriteOBJ() failed: can't open file \"%s\" to write.\n",
-	    filename);
-    exit(1);
+    fprintf(stderr, "glmWriteOBJ() failed: can't open file \"%s\" to write.\n", filename);
+    // ERROR STATUS
+    char bufferMsgBox[255];
+    sprintf_s(bufferMsgBox, "glmWriteOBJ() failed: can't open file:%s \n", filename);
+    MessageBox(NULL, bufferMsgBox, "Fatal Error", MB_OK);
   }
 
   /* spit out a header */
