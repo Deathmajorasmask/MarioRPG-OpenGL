@@ -85,6 +85,7 @@
     <ClCompile Include="BMPLoader.cpp" />
     <ClCompile Include="customOpenALSoft.cpp" />
     <ClCompile Include="dr_wav_impl.c" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="gltext_example.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="customOpenALSoft.h" />
     <ClInclude Include="EDXFramework.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="FogEs.h" />
     <ClInclude Include="GamePadRR.h" />
     <ClInclude Include="glew.h" />
@@ -117,10 +119,6 @@
     <ClInclude Include="TerrainEx.h" />
     <ClInclude Include="VectorRR.h" />
     <ClInclude Include="Water.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="basic.frag" />
-    <None Include="basic.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

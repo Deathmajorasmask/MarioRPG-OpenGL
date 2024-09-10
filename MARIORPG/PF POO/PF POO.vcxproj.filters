@@ -42,6 +42,9 @@
     <ClCompile Include="dr_wav_impl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPLoader.h">
@@ -119,13 +122,8 @@
     <ClInclude Include="customOpenALSoft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="basic.frag">
+    <ClInclude Include="FileManager.h">
       <Filter>Header Files</Filter>
-    </None>
-    <None Include="basic.vert">
-      <Filter>Header Files</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,13 @@
+# Blender3D MTL File: Thwomp.blend
+# Material Count: 1
+newmtl Material.087_11AAB7D7_c.bmp
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.553125 0.553125 0.553125
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd 11AAB7D7_c.bmp
+
+

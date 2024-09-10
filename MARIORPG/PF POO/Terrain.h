@@ -66,7 +66,7 @@ public:
 		gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, Ancho(), Alto(), GL_RGBA, GL_UNSIGNED_BYTE, Dir_Imagen());
 		Descarga();
 
-		gpuDemo = new ShaderDemo("basic.vert", "basic.frag");
+		gpuDemo = new ShaderDemo("shaders//basic.vert", "shaders//basic.frag");
 		gpuDemo->ligador(gpuDemo->vertShader, gpuDemo->fragShader);
 	}
 

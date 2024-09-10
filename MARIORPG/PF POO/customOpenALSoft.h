@@ -49,4 +49,3 @@ public:
 	int customOALSSoundStereoBucle();
 	int customOALSSoundStereoStop();
 };
-
