@@ -1,5 +1,6 @@
 #include "customOpenALSoft.h"
 
+//Manual https://github.com/kcat/openal-soft/wiki/Programmer%27s-Guide
 //OpenAL error checking
 #define OpenAL_ErrorCheck(message)\
 {\
@@ -63,7 +64,7 @@ customOpenALSoft::~customOpenALSoft()
 	alcCloseDevice(device);
 }
 
-int customOpenALSoft::customOALSSoundMono(std::string dirFileWav, bool loopSound, float Velx, float Vely, float Velz, float Posx, float Posy, float Posz) {
+int customOpenALSoft::customOALSSoundMono(std::string dirFileWav, float volumeGain, bool loopSound, float Velx, float Vely, float Velz, float Posx, float Posy, float Posz) {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Create buffers that hold our sound data; these are shared between contexts and ar defined at a device level
@@ -97,8 +98,8 @@ int customOpenALSoft::customOALSSoundMono(std::string dirFileWav, bool loopSound
 	alec(alGenSources(1, &monoSource));
 	alec(alSource3f(monoSource, AL_POSITION, Posx, Posy, Posz));
 	alec(alSource3f(monoSource, AL_VELOCITY, Velx, Vely, Velz));
-	alec(alSourcef(monoSource, AL_PITCH, 1.f));
-	alec(alSourcef(monoSource, AL_GAIN, 1.f));
+	alec(alSourcef(monoSource, AL_PITCH, 1.0f));
+	alec(alSourcef(monoSource, AL_GAIN, volumeGain));
 	if (loopSound) {
 		alec(alSourcei(monoSource, AL_LOOPING, AL_TRUE));
 	}
@@ -122,9 +123,10 @@ int customOpenALSoft::customOALSSoundMonoBucle() {
 	{
 		//basically loop until we're done playing the mono sound source
 		alec(alGetSourcei(monoSource, AL_SOURCE_STATE, &sourceState));
+		return 1; // AL_PLAYING TRUE
 	}
 
-	return 1;
+	return 0; // AL_PLAYING FALSE
 }
 
 int customOpenALSoft::customOALSSoundMonoStop() {
@@ -136,7 +138,7 @@ int customOpenALSoft::customOALSSoundMonoStop() {
 		return 1;
 }
 
-int customOpenALSoft::customOALSSoundStereo(std::string dirFileWav, bool loopSound) {
+int customOpenALSoft::customOALSSoundStereo(std::string dirFileWav, float volumeGain, bool loopSound) {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// load a stereo file into a buffer
@@ -171,7 +173,7 @@ int customOpenALSoft::customOALSSoundStereo(std::string dirFileWav, bool loopSou
 	//alec(alSource3f(stereoSource, AL_POSITION, 0.f, 0.f, 1.f)); //NOTE: this does not work like mono sound positions!
 	//alec(alSource3f(stereoSource, AL_VELOCITY, 0.f, 0.f, 0.f)); 
 	alec(alSourcef(stereoSource, AL_PITCH, 1.f));
-	alec(alSourcef(stereoSource, AL_GAIN, 1.f));
+	alec(alSourcef(stereoSource, AL_GAIN, volumeGain));
 	if (loopSound) {
 		alec(alSourcei(stereoSource, AL_LOOPING, AL_TRUE));
 	}
@@ -196,9 +198,10 @@ int customOpenALSoft::customOALSSoundStereoBucle() {
 	{
 		//basically loop until we're done playing the mono sound source
 		alec(alGetSourcei(stereoSource, AL_SOURCE_STATE, &sourceState));
+		return 1; // AL_PLAYING TRUE
 	}
 
-	return 1;
+	return 0; // AL_PLAYING FALSE
 }
 
 int customOpenALSoft::customOALSSoundStereoStop() {

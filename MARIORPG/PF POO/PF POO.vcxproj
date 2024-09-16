@@ -86,6 +86,7 @@
     <ClCompile Include="customOpenALSoft.cpp" />
     <ClCompile Include="dr_wav_impl.c" />
     <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="FPSCounter.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="gltext_example.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -101,6 +102,7 @@
     <ClInclude Include="EDXFramework.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FogEs.h" />
+    <ClInclude Include="FPSCounter.h" />
     <ClInclude Include="GamePadRR.h" />
     <ClInclude Include="glew.h" />
     <ClInclude Include="gltext.h" />

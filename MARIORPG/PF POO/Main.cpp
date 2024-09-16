@@ -8,11 +8,13 @@
 #include "Animations.h"
 #include "resources.h"
 #include "customOpenALSoft.h"
+#include "FPSCounter.h"
 #pragma comment (lib, "glew32.lib") 
 #pragma comment(lib,"opengl32.lib")
 #pragma comment(lib,"glu32.lib") 
 
 #define Timer1 100
+#define FPS 30
 
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 void DefPixelFormat(HDC hDC);
@@ -21,6 +23,7 @@ HDC hContextoVentana;
 Scene *scene;
 GamePadRR *gamPad;
 customOpenALSoft* p_customOpenALSoft;
+FPSCounter* fpscount;
 bool renderiza = false;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -62,11 +65,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	scene = new Scene(hwndVentana);
 	gamPad = new GamePadRR(1);
 	p_customOpenALSoft = new customOpenALSoft();
+	fpscount = new FPSCounter();
 
 	// Create a timer with the specified time-out value
 	SetTimer(hwndVentana,// Window handler that will receive timer messages
 		Timer1,// timer identifier
-		30,// timeout value
+		FPS,// timeout value
 		NULL);// direction of timer procedure
 
 	MSG msg = { 0 };
@@ -267,7 +271,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
 		}
 	case WM_TIMER:
-
+		fpscount->FPS_WM_TIMER();
 		renderiza = true;
 		break;
 	case WM_DESTROY:

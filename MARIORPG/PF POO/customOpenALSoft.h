@@ -42,10 +42,10 @@ private:
 public:
 	customOpenALSoft();
 	~customOpenALSoft();
-	int customOALSSoundMono(std::string dirFileWav, bool loopSound = false, float Velx = 0.0f, float Vely = 0.0f, float Velz = 0.0f, float Posx = 1.0f, float Posy = 0.0f, float Posz = 0.0f);
+	int customOALSSoundMono(std::string dirFileWav, float volumeGain = 1.0, bool loopSound = false, float Velx = 0.0f, float Vely = 0.0f, float Velz = 0.0f, float Posx = 1.0f, float Posy = 0.0f, float Posz = 0.0f);
 	int customOALSSoundMonoBucle();
 	int customOALSSoundMonoStop();
-	int customOALSSoundStereo(std::string dirFileWav, bool loopSound = false);
+	int customOALSSoundStereo(std::string dirFileWav, float volumeGain = 1.0, bool loopSound = false);
 	int customOALSSoundStereoBucle();
 	int customOALSSoundStereoStop();
 };
