@@ -85,6 +85,7 @@
     <ClCompile Include="BMPLoader.cpp" />
     <ClCompile Include="customOpenALSoft.cpp" />
     <ClCompile Include="dr_wav_impl.c" />
+    <ClCompile Include="Example.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="FPSCounter.cpp" />
     <ClCompile Include="glm.cpp" />

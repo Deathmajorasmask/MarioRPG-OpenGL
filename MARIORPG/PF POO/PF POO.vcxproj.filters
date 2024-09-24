@@ -48,6 +48,9 @@
     <ClCompile Include="FPSCounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Example.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BMPLoader.h">

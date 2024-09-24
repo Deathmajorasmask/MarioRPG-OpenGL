@@ -17,45 +17,38 @@
 #include <stdlib.h>
 #include "Particle.h"
 #include "OpenMove.h"
-// Text Rendering
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <GLFW/glfw3.h> /* https://github.com/glfw/glfw */
-#define GLT_IMPLEMENTATION
-#include "gltext.h" /* https://github.com/vallentin/glText */
 
 using namespace Particles;
 
 
-class Scene : public Camera , public Fog, public FogEs
+class Scene : public Camera, public Fog, public FogEs
 {
 public:
-	SkyDome *skyDay;
-	TerrainEx *terrainEx;
-	Terrain *terrain;
-	Water *lago;
-	Fog *niebla;
-	FogEs * foges;
+	SkyDome* skyDay;
+	TerrainEx* terrainEx;
+	Terrain* terrain;
+	Water* lago;
+	Fog* niebla;
+	FogEs* foges;
 	float dens = 0.000;
 	int numSecret = 0;
-	bool CtrlAnims[5],Huevoshi, panel, CtrlAnimsAux[5];
-	Particles::fuente *hojas[2];
-	Billboard *billBoard[40];
+	bool CtrlAnims[5], Huevoshi, panel, CtrlAnimsAux[5];
+	Particles::fuente* hojas[2];
+	Billboard* billBoard[40];
 	//Billboard *billBoard[100];
 	//Niebla niebla;
 
-	EDXFramework::Model *marprin, *marprinO, *marprinT,  *castle, *castle_windows,*castle_grass,*castle_tree,*botonB, *botonX, *coin,*boo,*piranha2, *billboardBoo, *billboardYoshi;
-	EDXFramework::Model *arrow,*piranha,*thwomp, *bowser,*ojBowser, *brBowser, *cursor,*billboardRed, *egg, *muss, *flower, *star;
+	EDXFramework::Model* marprin, * marprinO, * marprinT, * castle, * castle_windows, * castle_grass, * castle_tree, * botonB, * botonX, * coin, * boo, * piranha2, * billboardBoo, * billboardYoshi;
+	EDXFramework::Model* arrow, * piranha, * thwomp, * bowser, * ojBowser, * brBowser, * cursor, * billboardRed, * egg, * muss, * flower, * star;
 	Scene(HWND hWnd)
 	{
-		
+
 		GLfloat AmbMat[] = { 1, 1, 1, 1 };
 		GLfloat AmbPos[] = { 0, 400, 400, 1 };
 
 		GLfloat diffuse[] = { 1.0f, 0.5f, 0.0f, 0.5f };
 		GLfloat specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-		
+
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_LIGHTING);
@@ -101,7 +94,7 @@ public:
 		ojBowser = new EDXFramework::Model("models//Bowser//OjosBowser.obj", "models//Bowser//BowsSS01.bmp", 1);
 		bowser = new EDXFramework::Model("models//Bowser//Bowser.obj", "models//Bowser//BowsSS00.bmp", 1);
 		arrow = new EDXFramework::Model("models//Arrow//Arrow.obj", "models//Arrow//ArrowMAP.bmp", 1);
-		marprin = new EDXFramework::Model("models//Characters//MarioPrin1.obj", "models//Characters//mario_main.bmp",1);
+		marprin = new EDXFramework::Model("models//Characters//MarioPrin1.obj", "models//Characters//mario_main.bmp", 1);
 		marprinO = new EDXFramework::Model("models//Characters//MarioPrin2.obj", "models//Characters//mario_main.bmp", 1);
 		marprinT = new EDXFramework::Model("models//Characters//MarioPrin3.obj", "models//Characters//mario_main.bmp", 1);
 		cameraInitialize();
@@ -109,9 +102,9 @@ public:
 		CtrlAnimsAux[0] = true;
 		Billboards(billBoard, hWnd);
 	}
-	
 
-	void Billboards(Billboard *bills[], HWND hWnd)
+
+	void Billboards(Billboard* bills[], HWND hWnd)
 	{
 		int bx, by, bz;
 		for (int i = 0; i <= 39; i++)
@@ -128,18 +121,18 @@ public:
 		}
 
 	}
-	
+
 	void render(HDC hDC, HWND hWnd)
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glClearColor(0, 0, 0, 0);
 		glLoadIdentity();
 
-			GLfloat AmbInt[] = { 0.1, 0.1, 0.1, 1 };
-			glLightfv(GL_LIGHT0, GL_AMBIENT, AmbInt);
-		
-			//	py = terrain->Superficie(px, pz) * 4 + 4;
-			
+		GLfloat AmbInt[] = { 0.1, 0.1, 0.1, 1 };
+		glLightfv(GL_LIGHT0, GL_AMBIENT, AmbInt);
+
+		//	py = terrain->Superficie(px, pz) * 4 + 4;
+
 		cameraUpdate();
 		//CamaraUpdate();
 		//Billboards(billBoard);
@@ -150,37 +143,6 @@ public:
 		//OpenMove::scale(.3, .3, .3);
 		OpenMove::scale(.3, .3, .3);
 		skyDay->Draw();
-		glPopMatrix();
-
-		glPushMatrix();
-		// Initialize glText
-		gltInit();
-
-		// Creating text
-		GLTtext* text = gltCreateText();
-		gltSetText(text, "Text Example Native");
-
-		// Begin text drawing (this for instance calls glUseProgram)
-		gltBeginDraw();
-
-		// Draw any amount of text between begin and end
-		gltColor(1.0f, 1.0f, 1.0f, 1.0f);
-		gltDrawText2D(text, 0.0f, 0.0f, 1.0f); // x=0.0, y=0.0, scale=1.0
-
-		/*gltDrawText2DAligned(text,
-			(GLfloat)(1080 / 2),
-			(GLfloat)(720 / 2),
-			3.0f,
-			GLT_CENTER, GLT_CENTER);*/
-
-		// Finish drawing text
-		gltEndDraw();
-
-		//// Deleting text
-		gltDeleteText(text);
-
-		//// Destroy glText
-		gltTerminate();
 		glPopMatrix();
 
 		if (battleGet) {
@@ -207,7 +169,7 @@ public:
 		if (ganarFinal) {
 			glEnable(GL_COLOR_MATERIAL);
 			cameraWin();
-			
+
 			niebla->draw();
 			mx = -1;
 			my = 102.5;
@@ -216,11 +178,11 @@ public:
 			ganarFinal = false;
 			nuevoMapa = true;
 		}
-		if (renderMultimapa){
+		if (renderMultimapa) {
 			glPushMatrix();
 			foges->density = dens;
 			foges->drawing();
-			
+
 			glPopMatrix();
 		}
 
@@ -229,7 +191,7 @@ public:
 			vistaCamare = 2;
 		}
 		if (vistaCamare == 1) {
-			cameraFirst(mx, my+.5, mz);
+			cameraFirst(mx, my + .5, mz);
 			vistaCamare = 2;
 		}
 
@@ -272,7 +234,7 @@ public:
 				glPopMatrix();
 
 				if (pulsB) {
-					if (attMario4==false && attMario1 == false && attMario2 == false && attMario3 == false) {
+					if (attMario4 == false && attMario1 == false && attMario2 == false && attMario3 == false) {
 						glPushMatrix();
 						OpenMove::traslate(-14, 65.5, 49);
 						OpenMove::rotate(205, 0, 1, 0);
@@ -298,7 +260,7 @@ public:
 						glPopMatrix();
 					}
 					else {
-						
+
 						if (attMario1) {
 							if (verificar) {
 								MarioAttack(1);
@@ -328,7 +290,7 @@ public:
 
 						}
 						if (attMario2) {
-							
+
 							if (verificar) {
 								MarioAttack(2);
 								verificar = false;
@@ -382,7 +344,7 @@ public:
 								star->Draw();
 								glPopMatrix();
 
-								if (starCaid <=49) {
+								if (starCaid <= 49) {
 									starRotated = 360;
 									starCaid = 70;
 									turnMario = false;
@@ -406,23 +368,23 @@ public:
 								MarioAttack(3);
 								verificar = false;
 							}
-								flowerSpan += .04;
-								glPushMatrix();
-								OpenMove::traslate(-20, 62, 45);
-								OpenMove::scale(flowerSpan, flowerSpan, flowerSpan);
-								flower->Draw();
-								glPopMatrix();
-								if (flowerSpan >= 3) {
-									flowerSpan = 0;
-									turnMario = false;
-									attMario3 = false;
-									verificar = true;
-									pulsB = false;
-								}
+							flowerSpan += .04;
+							glPushMatrix();
+							OpenMove::traslate(-20, 62, 45);
+							OpenMove::scale(flowerSpan, flowerSpan, flowerSpan);
+							flower->Draw();
+							glPopMatrix();
+							if (flowerSpan >= 3) {
+								flowerSpan = 0;
+								turnMario = false;
+								attMario3 = false;
+								verificar = true;
+								pulsB = false;
+							}
 						}
 						//Fin de recargar Flower Points 
 						if (attMario4) {
-							if (verificar){
+							if (verificar) {
 								MarioAttack(4);
 								verificar = false;
 							}
@@ -491,7 +453,7 @@ public:
 						backBowser = true;
 					}
 
-					if (bowY <=62) {
+					if (bowY <= 62) {
 						backBowser = false;
 						turnMario = true;
 						AnimBowser = true;
@@ -518,14 +480,14 @@ public:
 						twompMovY--;
 					}
 					else {
-						twompMovY+=.3;
+						twompMovY += .3;
 					}
 					glPushMatrix();
 					OpenMove::traslate(-20, twompMovY, 45);
 					OpenMove::scale(.1, .1, .1);
 					thwomp->Draw();
 					glPopMatrix();
-					if (twompMovBool==true && twompMovY>=70) {
+					if (twompMovBool == true && twompMovY >= 70) {
 						twompMovY = 70;
 						twompMovBool = false;
 						turnMario = true;
@@ -562,7 +524,7 @@ public:
 						glPopMatrix();
 					}
 
-					if (piraMovY>=55) {
+					if (piraMovY >= 55) {
 						piraMovOp = true;
 						if (piraMovOp) {
 							if (!pirswitch) {
@@ -582,7 +544,7 @@ public:
 								pirswitch = false;
 							}
 							pirCont++;
-							if (pirCont>=30) {
+							if (pirCont >= 30) {
 								piraMovY = 50;
 								turnMario = true;
 								AnimBowser = true;
@@ -612,71 +574,71 @@ public:
 
 					//Fantasmas
 					glPushMatrix();
-						glPushMatrix();
-						OpenMove::traslate(-25,60,45);
-						OpenMove::rotate(50,0,1,0);
-						OpenMove::scale(phantomScale, phantomScale, phantomScale);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-25, 60, 45);
+					OpenMove::rotate(50, 0, 1, 0);
+					OpenMove::scale(phantomScale, phantomScale, phantomScale);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-25, 65, 40);
-						OpenMove::rotate(50, 0, 1, 0);
-						OpenMove::scale(phantomScale+.2, phantomScale+.2, phantomScale+.2);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-25, 65, 40);
+					OpenMove::rotate(50, 0, 1, 0);
+					OpenMove::scale(phantomScale + .2, phantomScale + .2, phantomScale + .2);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-15, 60, 40);
-						OpenMove::rotate(-140, 0, 1, 0);
-						OpenMove::scale(phantomScale+.25, phantomScale + .25, phantomScale + .25);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-15, 60, 40);
+					OpenMove::rotate(-140, 0, 1, 0);
+					OpenMove::scale(phantomScale + .25, phantomScale + .25, phantomScale + .25);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-15, 60, 42);
-						OpenMove::rotate(-140, 0, 1, 0);
-						OpenMove::scale(phantomScale, phantomScale, phantomScale);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-15, 60, 42);
+					OpenMove::rotate(-140, 0, 1, 0);
+					OpenMove::scale(phantomScale, phantomScale, phantomScale);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-15, 65, 42);
-						OpenMove::rotate(-140, 0, 1, 0);
-						OpenMove::scale(phantomScale, phantomScale, phantomScale);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-15, 65, 42);
+					OpenMove::rotate(-140, 0, 1, 0);
+					OpenMove::scale(phantomScale, phantomScale, phantomScale);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-30, 65, 38);
-						OpenMove::rotate(50, 0, 1, 0);
-						OpenMove::scale(phantomScale, phantomScale, phantomScale);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-30, 65, 38);
+					OpenMove::rotate(50, 0, 1, 0);
+					OpenMove::scale(phantomScale, phantomScale, phantomScale);
+					boo->Draw();
+					glPopMatrix();
 
-						glPushMatrix();
-						OpenMove::traslate(-25, 65, 45);
-						OpenMove::rotate(50, 0, 1, 0);
-						OpenMove::scale(phantomScale, phantomScale, phantomScale);
-						boo->Draw();
-						glPopMatrix();
+					glPushMatrix();
+					OpenMove::traslate(-25, 65, 45);
+					OpenMove::rotate(50, 0, 1, 0);
+					OpenMove::scale(phantomScale, phantomScale, phantomScale);
+					boo->Draw();
+					glPopMatrix();
 
-						if (phantomSecMov[0] == false) {
-							phantomScale += .03;
+					if (phantomSecMov[0] == false) {
+						phantomScale += .03;
+					}
+					if (phantomScale >= 2) {
+						phantomSecMov[0] = true;
+					}
+					if (phantomSecMov[0] == true) {
+						clocking += .03;
+						if (clocking >= 1) {
+							clocking = 0;
+							AnimBowser = true;
+							turnMario = true;
+							phantomScale = 0;
+							phantomSecMov[0] = false;
 						}
-						if (phantomScale >= 2) {
-							phantomSecMov[0]=true;
-						}
-						if (phantomSecMov[0]==true) {
-							clocking+=.03;
-							if (clocking>=1) {
-								clocking = 0;
-								AnimBowser = true;
-								turnMario = true;
-								phantomScale = 0;
-								phantomSecMov[0] = false;
-							}
-						}
+					}
 
 					glPopMatrix();
 
@@ -706,7 +668,7 @@ public:
 			}
 		}
 		else {
-			
+
 			//water
 			glPushMatrix();
 			OpenMove::traslate(0, 100, 0);
@@ -734,7 +696,7 @@ public:
 				marprinT->Draw();
 				animationMario = 0;
 			}
-			
+
 			glPopMatrix();
 
 			//captura de monedas y conteo 
@@ -747,41 +709,41 @@ public:
 			coinMarioRecc(secretcoin);
 
 			glPushMatrix();
-				if (!coinDelete[0]) {
-					glPushMatrix();
-					OpenMove::traslate(coinPosx1[secretcoin], 102.5, coinPosz1[secretcoin]);
-					OpenMove::rotate(animCoin, 0, 1, 0);
-					coin->Draw();
-					glPopMatrix();
-				}
-				if (!coinDelete[1]) {
-					glPushMatrix();
-					OpenMove::traslate(coinPosx2[secretcoin], 102.5, coinPosz2[secretcoin]);
-					OpenMove::rotate(animCoin, 0, 1, 0);
-					coin->Draw();
-					glPopMatrix();
-				}
-				if (!coinDelete[2]) {
-					glPushMatrix();
-					OpenMove::traslate(coinPosx3[secretcoin], 102.5, coinPosz3[secretcoin]);
-					OpenMove::rotate(animCoin, 0, 1, 0);
-					coin->Draw();
-					glPopMatrix();
-				}
-				if (!coinDelete[3]) {
-					glPushMatrix();
-					OpenMove::traslate(coinPosx4[secretcoin], 102.5, coinPosz4[secretcoin]);
-					OpenMove::rotate(animCoin, 0, 1, 0);
-					coin->Draw();
-					glPopMatrix();
-				}
-				if (!coinDelete[4]) {
-					glPushMatrix();
-					OpenMove::traslate(coinPosx5[secretcoin], 102.5, coinPosz5[secretcoin]);
-					OpenMove::rotate(animCoin, 0, 1, 0);
-					coin->Draw();
-					glPopMatrix();
-				}
+			if (!coinDelete[0]) {
+				glPushMatrix();
+				OpenMove::traslate(coinPosx1[secretcoin], 102.5, coinPosz1[secretcoin]);
+				OpenMove::rotate(animCoin, 0, 1, 0);
+				coin->Draw();
+				glPopMatrix();
+			}
+			if (!coinDelete[1]) {
+				glPushMatrix();
+				OpenMove::traslate(coinPosx2[secretcoin], 102.5, coinPosz2[secretcoin]);
+				OpenMove::rotate(animCoin, 0, 1, 0);
+				coin->Draw();
+				glPopMatrix();
+			}
+			if (!coinDelete[2]) {
+				glPushMatrix();
+				OpenMove::traslate(coinPosx3[secretcoin], 102.5, coinPosz3[secretcoin]);
+				OpenMove::rotate(animCoin, 0, 1, 0);
+				coin->Draw();
+				glPopMatrix();
+			}
+			if (!coinDelete[3]) {
+				glPushMatrix();
+				OpenMove::traslate(coinPosx4[secretcoin], 102.5, coinPosz4[secretcoin]);
+				OpenMove::rotate(animCoin, 0, 1, 0);
+				coin->Draw();
+				glPopMatrix();
+			}
+			if (!coinDelete[4]) {
+				glPushMatrix();
+				OpenMove::traslate(coinPosx5[secretcoin], 102.5, coinPosz5[secretcoin]);
+				OpenMove::rotate(animCoin, 0, 1, 0);
+				coin->Draw();
+				glPopMatrix();
+			}
 			glPopMatrix();
 
 
@@ -863,7 +825,7 @@ public:
 			if (twompMovAnim <= 0) {
 				twompMovBoolAux = true;
 			}
-			
+
 			//Estrella
 			if (!Huevoshi) {
 				glPushMatrix();
@@ -937,15 +899,13 @@ public:
 			glEnable(GL_LIGHTING);
 			//glDisable(GL_LIGHTING);
 			glPopMatrix();
-			
-
 
 			//Hongo
 			glPushMatrix();
-			
-			if ((mx == (-44 + booContadorX) && mz ==(21 + booContadorZ))) {
+
+			if ((mx == (-44 + booContadorX) && mz == (21 + booContadorZ))) {
 				CtrlAnims[4] = true;
-				
+
 			}
 			if (!(CtrlAnims[4])) {
 				OpenMove::traslate(-44 + (booContadorX), 103.5, 21 + (booContadorZ));
@@ -1026,8 +986,6 @@ public:
 
 			glPopMatrix();
 
-			
-
 			glPushMatrix();
 			for (int i = 0; i < 40; i++) {
 				//billboards
@@ -1039,7 +997,7 @@ public:
 			glPopMatrix();
 
 		}
-		
+
 
 		//No tocar
 		SwapBuffers(hDC);

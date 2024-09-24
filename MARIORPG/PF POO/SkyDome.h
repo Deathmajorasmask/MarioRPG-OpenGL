@@ -43,7 +43,7 @@ public:
 
 	void Draw()
 	{
-		
+		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_BACK);
 		glDisable(GL_DEPTH_TEST);
@@ -69,7 +69,7 @@ public:
 		glDisable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);
 		//glDeleteTextures(1, &esferaTextura);
-
+		glDisable(GL_TEXTURE_2D);
 	}
 };
 #endif

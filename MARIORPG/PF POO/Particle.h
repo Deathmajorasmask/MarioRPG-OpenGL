@@ -77,6 +77,7 @@ namespace Particles
 
 		void Draw(float tamaño)
 		{
+			glEnable(GL_TEXTURE_2D);
 			glBegin(GL_QUADS);
 			glColor3f(color.X, color.Y, color.Z);
 			glVertex3f(posicion.X - tamaño, posicion.Y - tamaño, posicion.Z);
@@ -84,6 +85,7 @@ namespace Particles
 			glVertex3f(posicion.X + tamaño, posicion.Y + tamaño, posicion.Z);
 			glVertex3f(posicion.X - tamaño, posicion.Y + tamaño, posicion.Z);
 			glEnd();
+			glDisable(GL_TEXTURE_2D);
 		}
 	};
 

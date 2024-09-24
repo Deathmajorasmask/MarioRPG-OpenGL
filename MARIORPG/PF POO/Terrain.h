@@ -129,7 +129,7 @@ public:
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, NULL);
-		//glDisable(GL_TEXTURE_2D);
+		glDisable(GL_TEXTURE_2D);
 
 	}
 

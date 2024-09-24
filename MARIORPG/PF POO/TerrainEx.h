@@ -105,6 +105,7 @@ public:
 		glDisableClientState(GL_NORMAL_ARRAY);
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		glDisable(GL_CULL_FACE);
+		glDisable(GL_TEXTURE_2D);
 		//gpuDemo->desuse();
 	}
 
