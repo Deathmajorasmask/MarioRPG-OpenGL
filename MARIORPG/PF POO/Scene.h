@@ -17,9 +17,11 @@
 #include <stdlib.h>
 #include "Particle.h"
 #include "OpenMove.h"
+#include "nanovg.h"
+#define NANOVG_GL3_IMPLEMENTATION	// Use GL2 implementation.
+#include "nanovg_gl.h"
 
 using namespace Particles;
-
 
 class Scene : public Camera, public Fog, public FogEs
 {
@@ -37,6 +39,11 @@ public:
 	Billboard* billBoard[40];
 	//Billboard *billBoard[100];
 	//Niebla niebla;
+	NVGcontext* vg = nvgCreateGL3(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
+	int font = nvgCreateFont(vg, "default", "fonts/Roboto-Bold.ttf");
+	RECT rect;
+	int heightRender = 720;
+	int widthRender = 1080;
 
 	EDXFramework::Model* marprin, * marprinO, * marprinT, * castle, * castle_windows, * castle_grass, * castle_tree, * botonB, * botonX, * coin, * boo, * piranha2, * billboardBoo, * billboardYoshi;
 	EDXFramework::Model* arrow, * piranha, * thwomp, * bowser, * ojBowser, * brBowser, * cursor, * billboardRed, * egg, * muss, * flower, * star;
@@ -59,8 +66,8 @@ public:
 		glEnable(GL_NORMALIZE);
 		glEnable(GL_LIGHT0);
 		glLightfv(GL_LIGHT0, GL_POSITION, AmbPos);
-		//habilitamos la forma de reflejar la luz
-		//glEnable(GL_COLOR_MATERIAL);
+		// Enable to reflect light
+		// glEnable(GL_COLOR_MATERIAL);
 
 		hojas[0] = new Particles::fuente(VectorRR(1, 1, 1), VectorRR(1, 1, 1), true, 40, 200);
 
@@ -101,6 +108,11 @@ public:
 		CtrlAnims[0] = true;
 		CtrlAnimsAux[0] = true;
 		Billboards(billBoard, hWnd);
+
+		if (font == -1) {
+			nvgDeleteGL3(vg);
+			MessageBox(hWnd, "nvgCreateFont", "Error", MB_OK);
+		}
 	}
 
 
@@ -127,6 +139,13 @@ public:
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glClearColor(0, 0, 0, 0);
 		glLoadIdentity();
+		// read windows dimentions
+		if (GetWindowRect(hWnd, &rect)) {
+			widthRender = rect.right - rect.left;
+			heightRender = rect.bottom - rect.top;
+		}
+		// Canvas Text in Screen Scene
+		nvgBeginFrame(vg, widthRender, heightRender, 1.0f);
 
 		GLfloat AmbInt[] = { 0.1, 0.1, 0.1, 1 };
 		glLightfv(GL_LIGHT0, GL_AMBIENT, AmbInt);
@@ -145,16 +164,24 @@ public:
 		skyDay->Draw();
 		glPopMatrix();
 
+		glPushMatrix();
+		// render Text
+		nvgFontSize(vg, 35.0f);
+		nvgFontFaceId(vg, font);
+		nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_TOP);
+		nvgFillColor(vg, nvgRGBA(255, 255, 255, 255));
+		nvgText(vg, 10, 10, "Beta", nullptr);
+		glPopMatrix();
+
 		if (battleGet) {
-			//Terreno
+			// Terrain
 			glPushMatrix();
 			OpenMove::traslate(0, 50, 0);
-			//OpenMove::scale(.5, .5, .5);
 			terrainEx->Draw();
 			glPopMatrix();
 		}
 		else {
-			//terreno multitextura
+			// Terrain Multi texture
 			glPushMatrix();
 			OpenMove::traslate(0, 60, 0);
 			terrain->Draw();
@@ -164,7 +191,6 @@ public:
 
 		if (ganarFinal == true && renderMultimapa == true) {
 			ganarFinal = false;
-			//MessageBox(hWnd, "No puedes ganar, tiene el level inferior activo (usas trampas)", "Aviso", MB_OK);
 		}
 		if (ganarFinal) {
 			glEnable(GL_COLOR_MATERIAL);
@@ -195,29 +221,29 @@ public:
 			vistaCamare = 2;
 		}
 
-		if (battleGet) { //Batalla
+		if (battleGet) { // Battle
 			if (gameOver) {
-				MessageBox(hWnd, "Te han matado", "Aviso", MB_OK);
+				MessageBox(hWnd, "Game Over, you lose", "MARIO RPG", MB_OK);
 				exit(1);
 			}
 
-			//Si ya gano
+			// Win
 			if (ganarFinal) {
-				MessageBox(hWnd, "Haz vencido, felicidades", "Aviso", MB_OK);
+				MessageBox(hWnd, "You Win, Congratulations", "MARIO RPG", MB_OK);
 				battleGet = false;
 			}
 
-			//Acomodo de la camara
+			// Resset Camera
 			if (nuevaCamera == true) {
 				cameraBattle();
 				cameraUpdate();
 				nuevaCamera = false;
 			}
 
-			//Batalla turno de mario
+			// Battle turn Mario
 			if (turnMario) {
 
-				//Bowser aparecera estatico
+				// Show Bowser Static
 				glPushMatrix();
 				OpenMove::traslate(-20, 62, 35);
 				OpenMove::scale(.4, .4, .4);
@@ -226,7 +252,7 @@ public:
 				bowser->Draw();
 				glPopMatrix();
 
-				//Auxiliar de mario estatico (Animar)
+				// Show Mario Static
 				glPushMatrix();
 				OpenMove::traslate(-20, 60, 45);
 				//OpenMove::scale(10,10,1);
@@ -242,8 +268,8 @@ public:
 						billboardRed->Draw();
 						glPopMatrix();
 
-						//Primera posición 65.5
-						//Ultima posición 65.2
+						//1 Position (y) 65.5
+						//2 Position 65.2
 						glPushMatrix();
 						OpenMove::traslate(-14, cury, 49);
 						OpenMove::rotate(205, 0, 1, 0);
@@ -251,7 +277,7 @@ public:
 						cursor->Draw();
 						glPopMatrix();
 
-						//Imprime el menu y B
+						// Show Menu 'B'
 						glPushMatrix();
 						OpenMove::traslate(-14, 65, 49);
 						OpenMove::rotate(205, 0, 1, 0);
@@ -266,14 +292,14 @@ public:
 								MarioAttack(1);
 								verificar = false;
 							}
-							if (failDrop == false) { //No ha fallado el ataque
+							if (failDrop == false) { // Don't fail attack
 								lan -= .12;
 								glPushMatrix();
 								OpenMove::traslate(-20, 61, lan);
 								OpenMove::scale(3, 3, 3);
 								egg->Draw();
 								glPopMatrix();
-								if (lan <= 35) { //Se efectuo el ataque con seguridad
+								if (lan <= 35) { // swap turn
 									lan = 45;
 									turnMario = false;
 									attMario1 = false;
@@ -284,7 +310,7 @@ public:
 							else {
 								attMario1 = false;
 								verificar = true;
-								MessageBox(hWnd, "Hacen falta Flower Points para lanzar", "Aviso", MB_OK);
+								MessageBox(hWnd, "I need Flower Point (FP)", "Aviso", MB_OK);
 							}
 
 
@@ -356,7 +382,7 @@ public:
 							else {
 								attMario2 = false;
 								verificar = true;
-								MessageBox(hWnd, "Hacen falta Flower Points para rezar a las estrellas", "Aviso", MB_OK);
+								MessageBox(hWnd, "I need Flower Point for Start attack (FP)", "Aviso", MB_OK);
 							}
 
 
@@ -406,40 +432,31 @@ public:
 							else {
 								attMario4 = false;
 								verificar = true;
-								MessageBox(hWnd, "Hacen falta Flower Points para Sanarse", "Aviso", MB_OK);
+								MessageBox(hWnd, "I need Flower Point for health (FP)", "Aviso", MB_OK);
 							}
 
-						}//Fin de ataque vida
+						}// End Health
 
 					}
-					//---Eliminación de Billboards
+					// Delete Billboards
 				}
-				/*
-				glPushMatrix();
-				OpenMove::traslate(-14.5, 65, 49.3);
-				OpenMove::rotate(205, 0, 1, 0);
-				OpenMove::scale(.1, .1, .1);
-				botonX->Draw();
-				glPopMatrix();
-				*/
 			}
 			else {
-				//Mario aparecera estatico
+				// Show Mario static
 				glPushMatrix();
 				OpenMove::traslate(-20, 60, 45);
-				//OpenMove::scale(10,10,1);
 				marprin->Draw();
 				glPopMatrix();
 
 				if (AnimBowser) {
 					srand(time(NULL));
-					numSecret = rand() % 6; //del 0 al 5
+					numSecret = rand() % 6; // Select Random Attack
 					BowserAttack(numSecret);
 					AnimBowser = false;
 				}
 
 				//Animaciones para la batalla
-				if (numSecret == 1) { //Golpe basico
+				if (numSecret == 1) { // Basic Stike
 					glPushMatrix();
 					OpenMove::traslate(-20, bowY, 35);
 					OpenMove::scale(.4, .4, .4);
@@ -460,8 +477,8 @@ public:
 					}
 
 				}
-				else if (numSecret == 2) { //Thwromp
-					//bowser 
+				else if (numSecret == 2) { // Thwromp attack
+					// Show bowser Animation
 					glPushMatrix();
 					OpenMove::traslate(-20, 62, 35);
 					OpenMove::scale(.4, .4, .4);
@@ -499,8 +516,8 @@ public:
 					}
 
 				}
-				else if (numSecret == 3) { //pulg
-					//Bowser
+				else if (numSecret == 3) { // Fuzzy Attack
+					// Show bowser Animation
 					glPushMatrix();
 					OpenMove::traslate(-20, 62, 35);
 					OpenMove::scale(.4, .4, .4);
@@ -556,8 +573,8 @@ public:
 					}
 
 				}
-				else if (numSecret == 4) { //Maxima llamas Boo
-					//Bowser
+				else if (numSecret == 4) { // Boo Attack
+					// Show bowser Animation
 					glPushMatrix();
 					OpenMove::traslate(-20, 62, 35);
 					OpenMove::scale(.4, .4, .4);
@@ -572,7 +589,7 @@ public:
 					brBowser->Draw();
 					glPopMatrix();
 
-					//Fantasmas
+					// Boo's
 					glPushMatrix();
 					glPushMatrix();
 					OpenMove::traslate(-25, 60, 45);
@@ -643,7 +660,7 @@ public:
 					glPopMatrix();
 
 				}
-				else { //Golpe mediocre
+				else { // Basic Stike
 					clocking += .01;
 					glPushMatrix();
 					OpenMove::traslate(-20, 62, 35);
@@ -669,11 +686,9 @@ public:
 		}
 		else {
 
-			//water
+			// Water
 			glPushMatrix();
 			OpenMove::traslate(0, 100, 0);
-			//OpenMove::rotate(-90, 1, 0, 0);
-			//OpenMove::scale(50, 50, 50);
 			GLfloat LightAmb3[] = { 0,0,0,0.0 };
 			glEnable(GL_BLEND);
 			glMateriali(GL_FRONT, GL_SHININESS, 20);
@@ -682,7 +697,7 @@ public:
 			glDisable(GL_BLEND);
 			glPopMatrix();
 
-			//Mario 
+			// Mario Animations
 			glPushMatrix();
 			OpenMove::traslate(mx, my, mz);
 			OpenMove::rotate(dircc, 0, 1, 0);
@@ -699,7 +714,7 @@ public:
 
 			glPopMatrix();
 
-			//captura de monedas y conteo 
+			// Coin and Add Count 
 			if (coinRandom) {
 				srand(time(NULL));
 				secretcoin = rand() % 3; //del 0 al 2
@@ -747,11 +762,8 @@ public:
 			glPopMatrix();
 
 
-			//Castillo 
+			// Castle 
 			glPushMatrix();
-			//	OpenMove::scale(.014, .014, .014);
-				//-Z es hacia abajo de la camara inicial,z es hacia arriba
-				//-x es hacia la derecha y x es hacia la izquierda
 			OpenMove::traslate(-0, 100, -0);
 			castle_grass->Draw();
 			castle_tree->Draw();
@@ -764,10 +776,9 @@ public:
 			float A = sin(MovS) * 2;
 			float B = cos(MovS) * 2;
 
-			//Stars
+			// Stars
 			if (coinRecc >= 5) {
 				glPushMatrix();
-				//OpenMove::traslate(-1, 104, 42);
 				OpenMove::traslate(-13, 106, 20);
 				OpenMove::traslate(0, A, 0);
 				OpenMove::rotate(animCoin + 2, 0, 1, 0);
@@ -780,7 +791,6 @@ public:
 				glPushMatrix();
 				OpenMove::traslate(-1, 106, 20);
 				OpenMove::traslate(A, A, B);
-				//OpenMove::traslate(-13, 106, 20);
 				OpenMove::rotate(140, 0, 1, 0);
 				OpenMove::scale(2, 2, 2);
 				boo->Draw();
@@ -789,7 +799,6 @@ public:
 				glPushMatrix();
 				OpenMove::traslate(-20, 106, 10);
 				OpenMove::traslate(A - .1, A, B + .2);
-				//OpenMove::traslate(-13, 106, 20);
 				OpenMove::rotate(140, 0, 1, 0);
 				OpenMove::scale(2, 2, 2);
 				boo->Draw();
@@ -798,7 +807,6 @@ public:
 				glPushMatrix();
 				OpenMove::traslate(-39, 106, 26);
 				OpenMove::traslate(A - .1, A, B - .2);
-				//OpenMove::traslate(-13, 106, 20);
 				OpenMove::rotate(140, 0, 1, 0);
 				OpenMove::scale(2, 2, 2);
 				boo->Draw();
@@ -806,7 +814,7 @@ public:
 
 			}
 
-			//Thwomp
+			// Thwomp
 			glPushMatrix();
 			OpenMove::traslate(-36, 103.5 + (twompMovAnim), 8);
 			OpenMove::scale(.1, .1, .1);
@@ -826,7 +834,7 @@ public:
 				twompMovBoolAux = true;
 			}
 
-			//Estrella
+			// Stars
 			if (!Huevoshi) {
 				glPushMatrix();
 				OpenMove::traslate(-3, 102.5, 35);
@@ -839,7 +847,7 @@ public:
 				Huevoshi = true;
 			}
 
-			//Huevo
+			// Yoshi Egg
 			glPushMatrix();
 			OpenMove::traslate(-40, 102.5, -3);
 			OpenMove::rotate(animCoin + 2, 0, 1, 0);
@@ -856,7 +864,7 @@ public:
 				glPopMatrix();
 			}
 
-			//Hongo protegido
+			// Protected Mushroom
 			glPushMatrix();
 			OpenMove::traslate(-8, 102.5, 13);
 			OpenMove::rotate(animCoin + 2, 0, 1, 0);
@@ -872,35 +880,25 @@ public:
 				glPopMatrix();
 			}
 
-			//Particulas
+			// Particles
 			glPushMatrix();
-			//glTranslated(-1, 10, 42);
 			OpenMove::traslate(-50, 80, -200);
-			//	miOGL::traslate(0, 100, 15);
-			//glRotated(90, 1, 0, 0);
-			//glScaled(200, 200, 200);
 			OpenMove::scale(50, 50, 50);
 			glDisable(GL_LIGHTING);
 			hojas[0]->draw();
 			glEnable(GL_LIGHTING);
 			glPopMatrix();
 
-			//Particulas
+			// Particles
 			glPushMatrix();
-			//glTranslated(-1, 10, 42);
 			OpenMove::traslate(-20, 80, -200);
-			//	miOGL::traslate(0, 100, 15);
-			//glRotated(90, 1, 0, 0);
-			//glScaled(200, 200, 200);
 			OpenMove::scale(50, 50, 50);
-			//glEnable(GL_LIGHTING);
 			glDisable(GL_LIGHTING);
 			hojas[0]->draw();
 			glEnable(GL_LIGHTING);
-			//glDisable(GL_LIGHTING);
 			glPopMatrix();
 
-			//Hongo
+			// Mushroom
 			glPushMatrix();
 
 			if ((mx == (-44 + booContadorX) && mz == (21 + booContadorZ))) {
@@ -942,7 +940,7 @@ public:
 			}
 			glPopMatrix();
 
-			//Fantasma Protector
+			// Protector Boo
 			glPushMatrix();
 
 			if ((mx == (-44 + ProtectBooX) && mz == (21 + ProtectBooZ))) {
@@ -997,9 +995,11 @@ public:
 			glPopMatrix();
 
 		}
+		// End canvas Text in Screen Scene
+		nvgBeginFrame(vg, widthRender, heightRender, 1.0f);
+		nvgEndFrame(vg);
 
-
-		//No tocar
+		// Don't touch
 		SwapBuffers(hDC);
 	}
 

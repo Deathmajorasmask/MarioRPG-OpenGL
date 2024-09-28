@@ -53,7 +53,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Resources/GLEW/include;$(SolutionDir)/../External Resources/GLFW/include;$(SolutionDir)/../External Resources/OpenAL/my_library_includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Resources/GLEW/include;$(SolutionDir)/../External Resources/GLFW/include;$(SolutionDir)/../External Resources/OpenAL/my_library_includes;$(SolutionDir)/../External Resources/Nano;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -92,6 +92,7 @@
     <ClCompile Include="gltext_example.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="nanovg.c" />
     <ClCompile Include="OpenMove.cpp" />
   </ItemGroup>
   <ItemGroup>

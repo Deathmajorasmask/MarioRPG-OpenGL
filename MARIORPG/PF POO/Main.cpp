@@ -167,13 +167,6 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 	static HGLRC hContextoGL;
 	static HDC hContextoAux;
 	int ancho, alto;
-	char epx[6] = "";
-	char epz[6] = "";
-	char epy[6] = "";
-	char edx[6] = "";
-	char edz[6] = "";
-	char edy[6] = "";
-	char ec[80] = "";
 
 	switch (message)
 	{
