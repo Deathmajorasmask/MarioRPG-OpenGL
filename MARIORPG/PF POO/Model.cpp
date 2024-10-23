@@ -28,6 +28,7 @@ Model::Model(string modelPath, string texturePath, bool mode) : textureId(0) {
 }
 
 void Model::Draw() {
+	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 	if (drawMode & GLM_TEXTURE) {
 		glBindTexture(GL_TEXTURE_2D, textureId);

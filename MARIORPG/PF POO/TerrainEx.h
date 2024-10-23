@@ -67,6 +67,7 @@ public:
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_BACK);
 		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_DEPTH_TEST);
 
 		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 		glBindTexture(GL_TEXTURE_2D, planoTextura[1]);

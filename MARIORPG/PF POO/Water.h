@@ -60,6 +60,7 @@ public:
 		float Amplitud = 0.9;
 		glPushAttrib(GL_CURRENT_BIT | GL_TEXTURE_BIT);
 		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_DEPTH_TEST);
 		glBindTexture(GL_TEXTURE_2D, planoTextura);
 
 		static float water_factor_min = 0.0f;

@@ -42,7 +42,7 @@ public:
 
 	void Draw(GLdouble PX, GLdouble PY, GLdouble PZ)
 	{
-
+		glEnable(GL_DEPTH_TEST);
 		/*We enable culling to reduce texture processing time. Textures are analyzed pixel by pixel to determine whether they are printed or not.*/
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
